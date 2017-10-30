@@ -1,0 +1,131 @@
+.wrapper {
+	padding: 0% 3%;
+	background-color: #ddd;
+}
+
+.container {
+	margin: 0 auto;
+}
+
+/***************Header************/
+/*********Header / Logo Bar*********/
+.logo-bar {
+	background-color: #ef23d9;
+}
+
+img.logo {
+	height: 85px;
+	width: 225px;
+	float: left;
+}
+
+.search-bar {
+	padding: 30px 0px 0px 0px;
+	background-color: #212112;
+	float: left;
+}
+
+.preference {
+	padding: 10px 0px 0px 0px;
+	background-color: #776574;
+	float: right;
+}
+
+/*********Header / Menu-Bar************/
+.menu-bar {
+	background-color: #232343;
+}
+
+.menu {
+	padding: 10px 0px;
+	background-color: #a329d2;
+	float: left;
+}
+
+.notification {
+	padding: 10px 0px;
+	background-color: #a32da2;
+	float: right;
+}
+
+/**************Menu**************/
+.main {
+	padding: 20px 0px;
+	background-color: #43dea2;
+}
+
+.col-3-l-right {
+	background-color: #98763d;
+}
+
+.col-3-l-right .col-2-left {
+	width: 80%;
+	float: left;
+}
+
+.col-3-l-right .col-3-right {
+	width: 20%;
+	float: right;
+}
+
+.col-3-l-right .col-2-left .search-grid {
+	width: 25%;
+	float: left;
+}
+
+.col-3-l-right .col-2-left .entry-grid {
+	width: 75%;
+	background-color: #cccccc;
+	float: right;
+}
+
+ul.tab-menu {
+	text-align: center;
+}
+
+ul.tab-menu li {
+	display: inline-block;
+	padding: 5px;
+	background-color: #dddddd;
+}
+
+ul.tab-menu li.active {
+	background-color: #1111cc;
+}
+
+.tab-content .list .image {
+	width: 10%;
+	padding: 1%;
+	float: left;
+}
+
+.tab-content .list .info {
+	width: 88%;
+	float: right;
+}
+
+/***************Footer************/
+.footer {
+	background-color: #d19000;
+}
+
+.footer-menu {
+	padding: 18px 0px;
+	background-color: #dd115f;
+	float: left;
+}
+
+.copyright {
+	padding: 18px 0px;
+	background-color: #ac423e;
+	float: right;
+}
+
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}

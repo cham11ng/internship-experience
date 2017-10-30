@@ -1,0 +1,79 @@
+/***************Header************/
+.user-name {
+	text-align: right;
+}
+
+.icon:before {
+	content: "\e008";
+}
+
+.entry-grid .heading {
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+.tab-content .list h2 {
+	font-size: 14pt;
+}
+
+/************Grid List************/
+.grid-list li a {
+	padding: 5px 10px;
+	display: block;
+}
+
+.grid-list li a:hover {
+	padding: 5px 10px;
+	background-color: #ffffff;
+	display: block;
+}
+
+.grid-list li a span {
+ 	float: right;
+}
+
+/*************Footer**************/
+
+
+/********Common Styles**********/
+a {
+	color: black;
+}
+
+.breadcrumb li {
+	display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+.breadcrumb li+li:before {
+    padding: 8px;
+    content: "|";
+}
+
+.panel {
+	background-color: #98763d;
+}
+
+.panel .panel-heading {
+	padding: 10px;
+	background-color: #1232ed;
+	color: #ffffff;
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+.panel .panel-body {
+	
+}
+
+.text-info {
+	color: #0000ff;
+}
+
+.text-danger {
+	color: #dd0000;
+}
+
+.text-success {
+	color: #00dd00;
+}
