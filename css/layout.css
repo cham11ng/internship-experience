@@ -31,9 +31,9 @@
 }
 
 .header-wrapper .search-bar input.search-input {
-	height: 8px;
+	height: 12px;
 	width: 243px;
-	padding: 6px 25px 6px 8px;
+	padding: 4px 25px 4px 8px;
 	margin-right: 7px;
 	font-size: 10px;
 	background-image: url("../images/search.png");
