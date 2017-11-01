@@ -7,176 +7,205 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<div class="wrapper">
-		<div class="header">
-			<div class="logo-bar container">
-				<div class="clearfix">
-					<img class="logo" src="images/logo.png" alt="TuTangle Logo" title="Tutangle Logo">
-					<div class="search-bar">
-						<form>
-							<input type="text" name="q">
-							<button>Search</button>
-						</form>
-					</div>
-					<div class="preference">
-						<div class="user-name">Sagar Chamling</div>
-						<div class="preference-menu">
-							<ul class="breadcrumb">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Settings</a></li>
-								<li><a href="#">Log Out</a></li>
-							</ul>
-						</div>
-					</div>
+<div class="wrapper">
+	<div class="header-wrapper">
+		<div class="logo-bar">
+			<div class="container clearfix">
+				<img class="logo" src="images/logo.png" />
+				<div class="search-bar">
+					<form>
+						<input class="search-input" type="text" name="q" placeholder="Search by Term, Member, or Entry Title">
+						<button class="search-button">Search</button>
+					</form>
 				</div>
-				<div class="menu-bar clearfix">
-					<div class="menu">
-						<ul class="breadcrumb">
-							<li><a href="#">Create New Entry</a></li>
-							<li><a href="#">My Topic Boxes</a></li>
-							<li><a href="#">Friends</a></li>
-							<li><a href="#">Invite New Member</a></li>
-						</ul>
-					</div>
-					<div class="notification">
-						<ul class="breadcrumb">
-							<li>
-								<a href="#">
-									<span class="icon"></span>Top Boxes Invite - 2
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="icon"></span>Friend Requests - 0
-								</a>
-							</li>
+				<div class="user-bar">
+					<div class="user-name">Sagar Chamling</div>
+					<div class="user-menu clearfix">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Settings</a></li>
+							<li><a href="#">Log Out</a></li>
 						</ul>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</div>
-		<div class="main">
-			<div class="container">
-				<div class="col-3-l-right clearfix">
-					<div class="col-2-left">
-						<div class="search-grid">
-							<div class="panel">
-								<div class="panel-heading">Recent Searches</div>
-								<div class="panel-body">
-									<ul class="grid-list">
-										<li><a href="#">Overview of Tutangle<span>=</span></a></li>
-										<li><a href="#">Searching the Site<span>=</span></a></li>
-										<li><a href="#">Searching the Site<span>=</span></a></li>
-										<li><a href="#">Searching the Site<span>=</span></a></li>
-									</ul>	
-								</div>
-							</div>
-							<div class="panel">
-								<div class="panel-heading">Recent Searches</div>
-								<div class="panel-body">
-									<ul class="grid-list">
-										<li><a href="#">Overview of Tutangle<span>^</span></a></li>
-										<li><a href="#">Searching the Site<span>^</span></a></li>
-										<li><a href="#">Searching the Site<span>^</span></a></li>
-										<li><a href="#">Searching the Site<span>^</span></a></li>
-									</ul>
-								</div>
+		<div class="main-menu">
+			<div class="container clearfix">
+				<div class="menu">
+					<ul>
+						<li><a href="#">Create New Entry</a></li>
+						<li><a href="#">My Topic Boxes</a></li>
+						<li><a href="#">Friends</a></li>
+						<li><a href="#">Invite New Member</a></li>
+					</ul>
+				</div>
+				<div class="notification">
+					<ul>
+						<li class="invite">
+							<a href="#">
+								Top Boxes Invite - <span>2</span>
+							</a>
+						</li>
+						<li class="request disabled">
+							<a href="#">
+								Friend Requests - <span>0</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content-wrapper">
+		<div class="container clearfix">
+			<div class="col-3-right clearfix">
+				<div class="col-2-left">
+					<div class="left">
+						<div class="panel">
+							<div class="panel-heading">Recent Searches</div>
+							<div class="panel-body">
+								<ul class="top-search">
+									<li class="clearfix">
+										<a href="#" class="left-list">Nick Cave and the Bad Seeds</a><a href="#" class="right-list"><span></span></a></li>
+									<li class="clearfix">
+										<a href="#" class="left-list">African Animals</a><a href="#" class="right-list"><span></span></a>
+									</li>
+								</ul>	
 							</div>
 						</div>
-						<div class="entry-grid">
-							<div class="heading">Entries</div>
-							<div class="tab">
-								<ul class="tab-menu">
+						<div class="panel">
+							<div class="panel-heading">Recent Searches</div>
+							<div class="panel-body">
+								<ul class="another-search">
+									<li class="clearfix">
+										<a href="#" class="left-list">Different versions of the Tristan Und Isolde Prelude</a><a href="#" class="right-list"><span></span></a
+									></li>
+									<li class="clearfix">
+										<a href="#" class="left-list">Music</a><a href="#" class="right-list"><span></span></a>
+									</li>
+									<li class="clearfix">
+										<a href="#" class="left-list">Guitar</a><a href="#" class="right-list"><span></span></a>
+									</li>
+									<li class="clearfix">
+										<a href="#" class="left-list">Bob Cohen</a><a href="#" class="right-list"><span></span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="main">
+						<div class="heading"><h1>Entries</h1></div>
+						<div class="tab-seperator clearfix">
+							<div class="left">All Entries</div>
+							<div class="right">Subscribed</div>
+						</div>
+						<div class="tab">
+							<div class="tab-menu clearfix">
+								<ul>
 									<li class="active"><a href="#">All Members</a></li>
 									<li><a href="#">Friends</a></li>
 									<li><a href="#">New Entries</a></li>
 									<li><a href="#">New Comments</a></li>
 								</ul>
-								<div class="tab-content">
-									<div class="list clearfix">
-										<img src="images/male.png" class="image" />
-										<div class="info">
-											<h2>Day for Night by Francois Trauffaut, a ground breaking film</h2>
-											<ul class="breadcrumb">
+							</div>
+							<div class="tab-body">
+								<div class="list clearfix">
+									<img src="images/profile.jpg" class="entry-image" />
+									<img src="images/frame.png" class="frame">
+									<div class="info">
+										<h2><a href="#">Day for Night by Francois Trauffaut, a ground.</a></h2>
+										<p>
+											<ul class="clearfix">
 												<li>by <span class="text-info">Alan Coe</span></li>
 												<li>Fabruary 10, 2012</li>
 												<li><span class="text-success">Subscribed</span></li>
 											</ul>
-											From Topic Box: <span class="text-info">My Favorite Movie</span>
-										</div>
+										</p>
+										<p>From Topic Box: <span class="text-info">My Favorite Movie</span></p>
 									</div>
-									<div class="list clearfix">
-										<img src="images/female.png" class="image" />
-										<div class="info">
-											<span class="text-info">New Entry!</span>
-											<h2>Blade Runner, The Director's Cut</h2>
-											<ul class="breadcrumb">
+								</div>
+								<div class="list clearfix">
+									<img src="images/test.jpg" class="entry-image" />
+									<img src="images/frame.png" class="frame">
+									<div class="info">
+										<p class="text-info">New Entry!</p>
+										<h2><a href="#">Blade Runner, The Director's Cut Unchain</a></h2>
+										<p>
+											<ul class="clearfix">
 												<li>by <span class="text-info">Mary Pilot</span></li>
 												<li>Fabruary 8, 2012</li>
 											</ul>
-											From Topic Box: <span class="text-info">Behind the Scene</span>
-										</div>
+										</p>
+										<p>From Topic Box: <span class="text-info">Behind the Scene</span></p>
 									</div>
-									<div class="list clearfix">
-										<img src="images/male.png" class="image" />
-										<div class="info">
-											<h2>The Best French Restaurent in Chicago?</h2>
-											<ul class="breadcrumb">
+								</div>
+								<div class="list clearfix">
+									<img src="images/final.jpg" class="entry-image" />
+									<img src="images/frame.png" class="frame">
+									<div class="info">
+										<h2><a href="#">The Best French Restaurent in Chicago?</a></h2>
+										<p>
+											<ul class="clearfix">
 												<li>by <span class="text-info">Jim Roy</span></li>
 												<li>Fabruary 7, 2012</li>
 											</ul>
-											From Topic Box: <span class="text-info">Chicago Restaurants Reviews</span>
-										</div>
+										</p>
+										<p>From Topic Box: <span class="text-info">Chicago Restaurants Reviews</span></p>
 									</div>
-									<div class="list clearfix">
-										<img src="images/female.png" class="image" />
-										<div class="info">
-											<span class="text-danger">Topic Box Invite!</span>
-											<h2>Pea Pesto</h2>
-											<ul class="breadcrumb">
+								</div>
+								<div class="list clearfix">
+									<img src="images/picture.jpg" class="entry-image" />
+									<img src="images/frame.png" class="frame">
+									<div class="info">
+										<p class="text-danger">Topic Box Invite!</p>
+										<h2><a href="#">Pea Pesto</a></h2>
+										<p>
+											<ul class="clearfix">
 												<li>by <span class="text-info">Marianne Glg</span></li>
 												<li>Fabruary 10, 2012</li>
 												<li><span class="text-success">Subscribed</span></li>
 											</ul>
-											From Topic Box: <span class="text-info">My Favorite Movie</span>
-										</div>
+										</p>
+										<p>From Topic Box: <span class="text-info">My Favorite Movie</span></p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-3-right tutorials">
-						<div class="panel">
-							<div class="panel-heading">Video Tutorials</div>
-							<div class="panel-body">
-								<ul class="grid-list">
-									<li><a href="#">Overview of Tutangle</a></li>
-									<li><a href="#">Searching the Site</a></li>
-									<li><a href="#">Searching the Site</a></li>
-									<li><a href="#">Searching the Site</a></li>
-								</ul>
-							</div>
+				</div>
+				<div class="right">
+					<div class="panel">
+						<div class="panel-heading">Video Tutorials</div>
+						<div class="panel-body">
+							<ul class="grid-list">
+								<li><a href="#">Overview of Tutangle</a></li>
+								<li><a href="#">Searching the Site</a></li>
+								<li><a href="#">Previous & Saved Searches</a></li>
+								<li><a href="#">The Topic Box Page</a></li>
+							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="footer">
-			<div class="container clearfix">
-				<div class="footer-menu">
-					<ul class="breadcrumb">
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Contact Us</a></li>
-						<li><a href="#">Terms of Use</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Feedback</a></li>
-					</ul>
-				</div>
-				<div class="copyright">
-					<span>&copy Tutangle 2013</span>
-				</div>
+	</div>
+	<div class="footer-wrapper">
+		<div class="container clearfix">
+			<div class="footer-menu">
+				<ul>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Feedback</a></li>
+				</ul>
+			</div>
+			<div class="copyright">
+				<span>&copy Tutangle 2013</span>
 			</div>
 		</div>
 	</div>
+</div>
 </body>
 </html>

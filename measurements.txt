@@ -1,5 +1,57 @@
 width: 1002px
 height: 837px
 
-header
+container
+width: 938px
+
+header height: 85px;
+logo width: 223px;
+
+logo height: 49px;
+padding top:20px;
+padding bottom: 16px;
+
+// search
+search total: 360px;
+
+search bar width: 336px;
+search bar height: 20px;
+gap padding left: 24px;
+padding top: 40px;
+padding bottom: 25px;
+
+// preferences
+width: auto;
+height: 34px;
+
+padding top: 28px;
+padding bottom: 23px;
+
+
+main menu
+padding right/left/top/bottom: 15px;
+height: 46
+
+
+// main
+panel left
+width: 194px;
+
+
+width: 762px;
+
+panel right
+width: 176px;
+
+panel
+padding heading: 12px;
+padding content: 11px;
+
+
+download
+font-family: "Arial, Times New Roman, Vardana" 
+
+
+
+
 
