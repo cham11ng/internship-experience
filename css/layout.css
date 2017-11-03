@@ -60,78 +60,14 @@
 	float: right;
 }
 
-.header-wrapper .user-bar .user-name {
-	text-align: right;
-	padding: 0px 0px 5px 0px;
-	font-size: 14px;
-	line-height: 12px;
-}
-
-.header-wrapper .user-bar .user-menu ul li {
-	float: left;
-	padding: 5px 0px 0px 0px;
-	line-height: 12px;
-	font-size: 12px;
-}
-
-.header-wrapper .user-bar .user-menu ul li+li:before {
-	padding: 0px 5px;
-	content: "|";
-}
-
 .header-wrapper .main-menu {
 	background-color: #f5f5f5;
-}
-
-.header-wrapper .main-menu .menu {
-	width: auto;
-	float: left;
-}
-
-.header-wrapper .main-menu .menu ul li {
-	line-height: 10px;
-	font-size: 14px;
-	padding: 15px 8px;
-	float: left;
-}
-
-.header-wrapper .main-menu .menu ul li+li:before {
-	padding: 0px 7px;
-	content: "";
 }
 
 .header-wrapper .main-menu .notification {
 	font-size: 10pt;
 	width: auto;
 	float: right;
-}
-
-.header-wrapper .main-menu .notification ul li {
-	margin-left: 30px;
-	padding: 12px 5px 12px 25px;
-	line-height: 16px;
-	font-size: 12px;
-	float: left;
-}
-
-.header-wrapper .main-menu .notification ul li.invite {
-	background-image: url("../images/invite-icon.png");
-	background-repeat: no-repeat;
-	background-position: center left;
-}
-
-.header-wrapper .main-menu .notification ul li.disabled a {
-	color: grey;
-}
-
-.header-wrapper .main-menu .notification ul li.request.disabled {
-	background-image: url("../images/friend-request-icon.png");
-	background-repeat: no-repeat;
-	background-position: center left;
-}
-
-.header-wrapper .main-menu .notification ul li a {
-	line-height: 16px;
 }
 
 /************Main Container************/
@@ -170,13 +106,6 @@
 	float: right;
 }
 
-.col-2-left .main .heading {
-	line-height: 22px;
-	font-size: 12pt;
-	font-weight: bold;
-	padding-bottom: 12px;
-}
-
 .col-2-left .main .tab-seperator {
 	padding: 14px 0px 13px 0px;
 	font-size: 8px;
@@ -196,74 +125,6 @@
 	float: right;
 }
 
-.col-2-left .main .tab-menu {
-	padding: 0px 1px;
-	background-image: url("../images/tab-menu.png");
-	background-repeat: no-repeat;
-}
-
-.col-2-left .main .tab-menu ul li a {
-	width: 114px;
-	margin: 0px 7.5px;
-	padding: 10px 0px;
-	background-image: url("../images/inactive.png");
-	background-repeat: no-repeat;
-	text-align: center;
-	font-size: 9px;
-	float: left;
-}
-
-.col-2-left .main .tab-menu ul li:hover a, .col-2-left .main .tab-menu ul li.active a {
-	background-image: url("../images/active.png");
-	color: white;
-}
-
-.col-2-left .main .list {
-	position: relative;
-	padding: 15px 0px;
-	background-image: url("../images/border.png");
-	background-repeat: no-repeat;
-	background-position: bottom;
-}
-
-.col-2-left .main .list img.entry-image {
-	height: 70px;
-	width: 70px;
-	float: left;
-}
-
-.col-2-left .main .list img.frame {
-	position: absolute;
-	top: 15px;
-	left: 0px;
-}
-
-.col-2-left .main .list .info {
-	width: 439px;
-	float: right;
-}
-
-.col-2-left .main .list .info h2 {
-	font-size: 14px;
-	padding-bottom: 4px;
-}
-
-.col-2-left .main .list .info p {
-	font-size: 12px;
-	line-height: 18px;
-}
-
-.col-2-left .main .list .info ul li {
-	font-size: 12px;
-	line-height: 14px;
-	float: left;
-}
-
-.col-2-left .main .list .info ul li+li:before {
-	padding: 5px;
-	content: "|";
-}
-
 .right {
 	width: 176px;
 	float: right;
@@ -271,33 +132,19 @@
 
 /************Footer************/
 .footer-wrapper {
+	padding: 19px 0px 18px 0px;
 	line-height: 8px;
 	background-color: #727272;
 	font-size: 10px;
 }
 
 .footer-wrapper .footer-menu {
-	padding: 19px 0px 18px 0px;
 	float: left;
 }
 
-.footer-wrapper .footer-menu ul li {
-	float: left;
-}
 
-.footer-wrapper .footer-menu ul li+li:before {
-	padding: 0px 7px;
-	content: "*";
-	color: #d4d4d4;
-	float: left;
-}
-
-.footer-wrapper .footer-menu ul li a {
-	color: #d4d4d4;
-}
 
 .footer-wrapper .copyright {
-	padding: 19px 0px 18px 0px;
 	color: #d4d4d4;
 	float: right;
 }
