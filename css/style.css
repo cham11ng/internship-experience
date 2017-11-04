@@ -26,6 +26,10 @@
 	line-height: 12px;
 }
 
+.header-wrapper .user-bar .user-menu {
+	float: left;
+}
+
 .header-wrapper .user-bar .user-menu ul li {
 	float: left;
 	padding: 5px 0px 0px 0px;
@@ -38,16 +42,11 @@
 	content: "|";
 }
 
-.header-wrapper .main-menu .menu {
-	width: auto;
-	float: left;
-}
-
 .header-wrapper .main-menu .menu ul li {
+	padding: 15px 8px;
 	line-height: 10px;
 	font-size: 14px;
-	padding: 15px 8px;
-	float: left;
+	text-align: center;
 }
 
 .header-wrapper .main-menu .menu ul li:hover, .header-wrapper .main-menu .menu ul li.active {
@@ -60,31 +59,18 @@
 }
 
 .header-wrapper .main-menu .notification ul li {
-	margin-left: 30px;
-	padding: 12px 5px 12px 25px;
+	padding: 12px 0px;
 	line-height: 16px;
 	font-size: 12px;
-	float: left;
-}
-
-.header-wrapper .main-menu .notification ul li.invite {
-	background-image: url("../images/invite-icon.png");
-	background-repeat: no-repeat;
-	background-position: center left;
-}
-
-.header-wrapper .main-menu .notification ul li.disabled a {
-	color: grey;
-}
-
-.header-wrapper .main-menu .notification ul li.request.disabled {
-	background-image: url("../images/friend-request-icon.png");
-	background-repeat: no-repeat;
-	background-position: center left;
+	text-align: center;
 }
 
 .header-wrapper .main-menu .notification ul li a {
 	line-height: 16px;
+}
+
+.header-wrapper .main-menu .notification ul li.disabled a {
+	color: grey;
 }
 
 /************Main Container************/
@@ -130,25 +116,25 @@
 }
 
 .col-2-left .main .list img.entry-image {
-	height: 70px;
 	min-width: 13.51351351%;
-	float: left;
+	margin: 0% auto;
 }
 
 .col-2-left .main .list img.frame {
+	min-width: 13.51351351%;
 	position: absolute;
 	top: 15px;
 	left: 0px;
 }
 
 .col-2-left .main .list .info {
-	width: 84.74903475%;
-	float: right;
+	width: 100%;
+	text-align: center;
 }
 
 .col-2-left .main .list .info h2 {
 	font-size: 14px;
-	padding-bottom: 4px;
+	padding: 4px 0;
 }
 
 .col-2-left .main .list .info p {
@@ -156,26 +142,20 @@
 	line-height: 18px;
 }
 
+.col-2-left .main .list .info ul {
+	margin: 0% auto;
+	width: 100%;
+}
+
 .col-2-left .main .list .info ul li {
 	font-size: 12px;
 	line-height: 14px;
-	float: left;
-}
-
-.col-2-left .main .list .info ul li+li:before {
-	padding: 5px;
-	content: "|";
+	padding: 2px 0px;
 }
 
 /******************Footer****************/
 .footer-wrapper .footer-menu ul li {
-	float: left;
-}
-
-.footer-wrapper .footer-menu ul li+li:before {
-	padding: 0px 7px 0px 7px;
-	content: url("../images/dot.png");
-	color: #d4d4d4;
+	text-align: center;
 }
 
 .footer-wrapper .footer-menu ul li a {

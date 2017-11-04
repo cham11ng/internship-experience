@@ -1,0 +1,101 @@
+/*************Header***********/
+.header-wrapper img.logo {
+	width: auto;
+	float: left;
+}
+
+.header-wrapper .search-bar {
+	height: 20px;
+	width: 336px;
+	padding: 20px 0px 9px 0px;
+	float: right;
+}
+
+.header-wrapper .search-bar input.search-input {
+	width: 243px;
+	margin: 0px 7px 0px 0px;
+	float: left;
+}
+
+.header-wrapper .search-bar button.search-button {
+	width: 53px;
+	margin-top: 0px;
+	float: left;
+}
+
+.header-wrapper .user-bar {
+	padding: 10px 0px;
+	width: 100%;
+	float: right;
+}
+
+.header-wrapper .user-bar .user-menu {
+	float: right;
+}
+
+/************Main Container************/
+.col-2-left {
+	width: 100%;
+}
+
+.col-2-left .left {
+	width: 25.45931759%;
+	float: left;
+	display: block;
+}
+
+.col-2-left .main {
+	width: 67.97900262%;
+	padding: 0% 02.55863539% 0% 02.77185501%;
+	float: right;
+}
+
+.col-2-left .main .list img.entry-image {
+	min-width: 13.51351351%;
+	float: left;
+}
+
+.col-2-left .main .list .info {
+	width: 84.74903475%;
+	text-align: left;
+	float: right;
+}
+
+.col-2-left .main .list .info h2 {
+	padding-top: 0px;
+}
+
+.col-2-left .main .list .info ul li {
+	float: left;
+}
+
+.col-2-left .main .list .info ul li+li:before {
+	padding: 5px;
+	content: "|";
+}
+
+/************Footer************/
+.footer-wrapper {
+	width: 100%;
+	display: table;
+}
+
+.footer-wrapper .footer-menu {
+	width: auto;
+	float: left;
+}
+
+.footer-wrapper .copyright {
+	margin-top: 0px;
+	width: auto;
+	float: right;
+}
+
+.footer-wrapper .footer-menu ul li {
+	float: left;
+}
+
+.footer-wrapper .footer-menu ul li+li:before {
+	padding: 0px 7px 0px 7px;
+	content: url("../images/dot.png");
+}

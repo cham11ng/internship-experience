@@ -6,6 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/layout.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" media="only screen and (min-width: 768px) and (max-width: 1024px) " href="css/ipad-layout.css">
+	<link rel="stylesheet" media="only screen and (min-width: 1024px) and (max-width: 1600px)" href="css/desktop-layout.css">
 </head>
 <body>
 <div class="wrapper">
@@ -21,8 +23,8 @@
 				</div>
 				<div class="user-bar">
 					<div class="user-name">Sagar Chamling</div>
-					<div class="user-menu clearfix">
-						<ul>
+					<div class="user-menu">
+						<ul class="clearfix">
 							<li><a href="#">Home</a></li>
 							<li><a href="#">Settings</a></li>
 							<li><a href="#">Log Out</a></li>
@@ -34,7 +36,7 @@
 		<div class="main-menu">
 			<div class="container clearfix">
 				<div class="menu">
-					<ul>
+					<ul class="clearfix">
 						<li><a href="#">Create New Entry</a></li>
 						<li><a href="#">My Topic Boxes</a></li>
 						<li><a href="#">Friends</a></li>
@@ -42,7 +44,7 @@
 					</ul>
 				</div>
 				<div class="notification">
-					<ul>
+					<ul class="clearfix">
 						<li class="invite">
 							<a href="#">
 								Top Boxes Invite - <span>2</span>
@@ -61,7 +63,7 @@
 	<div class="content-wrapper">
 		<div class="container clearfix">
 			<div class="col-3-right clearfix">
-				<div class="col-2-left">
+				<div class="col-2-left clearfix">
 					<div class="left">
 						<div class="panel">
 							<div class="panel-heading">Recent Searches</div>
@@ -153,12 +155,13 @@
 									<img src="images/entry.png" alt="Entry image" class="entry-image" />
 									<img src="images/frame.png" alt="Image Frame" class="frame">
 									<div class="info">
-										<h2><a href="#">The Best French Restaurent in Chicago?</a></h2>
+										<h2><a href="#">The Meaning of Night, Dark Book but incredibly well written.</a></h2>
 										<ul class="clearfix">
-											<li>by <a href="#" class="text-info">Jim Roy</a></li>
+											<li>by <a href="#" class="text-info">John-Peter Moise</a></li>
 											<li>Fabruary 7, 2012</li>
+											<li>Subscribed</li>
 										</ul>
-										<p>From Topic Box: <a href="#" class="text-info">Chicago Restaurants Reviews</a></p>
+										<p>From Topic Box: <a href="#" class="text-info">Books Read & Books to Read</a></p>
 									</div>
 								</div>
 								<div class="list clearfix">
@@ -170,9 +173,8 @@
 										<ul class="clearfix">
 											<li>by <a href="#" class="text-info">Marianne Glg</a></li>
 											<li>Fabruary 10, 2012</li>
-											<li><a href="#" class="text-success">Subscribed</a></li>
 										</ul>
-										<p>From Topic Box: <a href="#" class="text-info">My Favorite Movie</a></p>
+										<p>From Topic Box: <a href="#" class="text-info">Favorite Recipes</a></p>
 									</div>
 								</div>
 							</div>
