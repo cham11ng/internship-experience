@@ -83,6 +83,11 @@
 	display: block;
 }
 
+.col-2-left .main .tab-menu ul li a {
+	width: 22.00772201%;
+	margin: 0% 1.45348837%;
+}
+
 .col-2-left .main .list img.entry-image {
 	min-width: 13.51351351%;
 	float: left;

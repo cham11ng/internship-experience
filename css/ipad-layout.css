@@ -34,6 +34,10 @@
 }
 
 /************Main Container************/
+.col-3-right {
+	background-image: url("../images/background-ipad.png");
+}
+
 .col-2-left {
 	width: 100%;
 }
@@ -48,6 +52,11 @@
 	width: 67.97900262%;
 	padding: 0% 02.55863539% 0% 02.77185501%;
 	float: right;
+}
+
+.col-2-left .main .tab-menu ul li a {
+	width: 22.00772201%;
+	margin: 0% 1.45348837%;
 }
 
 .col-2-left .main .list img.entry-image {

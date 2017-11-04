@@ -7,15 +7,22 @@
 }
 
 .text-info {
-	color: #0000ff;
+	color: #50afc1;
+	font-weight: bold;
 }
 
 .text-danger {
-	color: #dd0000;
+	color: #d33f19;
+	font-weight: bold;
 }
 
 .text-success {
-	color: #00dd00;
+	color: #709722;
+	font-weight: bold;
+}
+
+.uppercase {
+	text-transform: uppercase;
 }
 
 /**************Header****************/
@@ -90,8 +97,8 @@
 }
 
 .col-2-left .main .tab-menu ul li a {
-	width: 22.09302326%;
-	margin: 0% 1.45348837%;
+	width: 23.35907336%;
+	margin: 0% 0.77220077%;
 	padding: 10px 0px;
 	font-size: 0.5625em;
 	text-align: center;
