@@ -96,19 +96,23 @@
 }
 
 .col-2-left .main .tab-menu {
-	padding: 0px 1px;
+	padding: 0px 0.19305019%;
 	background-image: url("../images/tab-menu.png");
 	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
 }
 
 .col-2-left .main .tab-menu ul li a {
-	width: 114px;
-	margin: 0px 7.5px;
+	width: 22.09302326%;
+	margin: 0% 1.45348837%;
 	padding: 10px 0px;
+	font-size: 0.5625em;
+	text-align: center;
 	background-image: url("../images/inactive.png");
 	background-repeat: no-repeat;
-	text-align: center;
-	font-size: 9px;
+	background-size: contain;
+	background-position: center;
 	float: left;
 }
 
@@ -127,7 +131,7 @@
 
 .col-2-left .main .list img.entry-image {
 	height: 70px;
-	width: 70px;
+	min-width: 13.51351351%;
 	float: left;
 }
 
@@ -138,7 +142,7 @@
 }
 
 .col-2-left .main .list .info {
-	width: 439px;
+	width: 84.74903475%;
 	float: right;
 }
 
@@ -169,11 +173,16 @@
 }
 
 .footer-wrapper .footer-menu ul li+li:before {
-	padding: 0px 7px;
+	padding: 0px 7px 0px 7px;
 	content: url("../images/dot.png");
 	color: #d4d4d4;
 }
 
 .footer-wrapper .footer-menu ul li a {
+	font-size: 0.625em;
 	color: #d4d4d4;
+}
+
+.footer-wrapper .copyright span {
+	font-size: 0.625em;
 }

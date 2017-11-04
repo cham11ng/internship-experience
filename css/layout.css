@@ -1,17 +1,17 @@
 .wrapper {
 	font-family: Arial, "Times New Roman", Verdana;
-	font-size: 12px;
-	min-width: 1002px;
 }
 
 .container {
-	width: 938px;
-	padding: 0px 31px 0px 33px;
-	margin: 0 auto;
+	max-width: 58.625em;
+	padding: 0em 1.9375em 0em 2.0625em;
+	margin: 0em auto;
 }
 
 /*************Header***********/
 .header-wrapper {
+	width: 100%;
+	display: table;
 }
 
 .header-wrapper .logo-bar {
@@ -77,72 +77,75 @@
 
 .col-3-right {
 	background-image: url("../images/background.png");
+	background-size: contain;
 	background-position: center;
 	background-repeat: repeat-y;
 }
 
 .col-2-left {
+	width: 81.23667377%;
 	float: left;
 }
 
 .col-2-left .left {
-	width: 194px;
+	width: 25.45931759%;
 	float: left;
 }
 
 .col-2-left .left .left-list {
-	width: 138px;
+	width: 89.9408284%;
 	float: left;
 }
 
 .col-2-left .left .right-list {
-	width: 12px;
+	width: 7.10059172%;
 	float: right;
 }
 
 .col-2-left .main {
-	width: 518px;
-	padding: 0px 24px 0px 26px;
+	width: 67.97900262%;
+	padding: 0% 02.55863539% 0% 02.77185501%;
 	float: right;
 }
 
 .col-2-left .main .tab-seperator {
-	padding: 14px 0px 13px 0px;
-	font-size: 8px;
+	padding: 0.875em 0em 0.8125em 0em;
 	background-image: url("../images/tab-seperator.png");
 	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
 }
 
 .col-2-left .main .tab-seperator .left {
-	width: 259px;
+	width: 50%;
+	font-size: 0.5625em;
 	text-align: center;
 	float: left;
 }
 
 .col-2-left .main .tab-seperator .right {
-	width: 259px;
+	width: 50%;
+	font-size: 0.5625em;
 	text-align: center;
 	float: right;
 }
 
 .right {
-	width: 176px;
+	width: 18.76332623%;
 	float: right;
 }
 
 /************Footer************/
 .footer-wrapper {
-	padding: 19px 0px 18px 0px;
-	line-height: 8px;
+	padding: 1.1875em 0em 1.125em 0em;
+	width: 100%;
+	display: table;
 	background-color: #727272;
-	font-size: 10px;
 }
 
 .footer-wrapper .footer-menu {
 	float: left;
 }
-
-
 
 .footer-wrapper .copyright {
 	color: #d4d4d4;
@@ -174,7 +177,7 @@
 }
 
 .panel .panel-body ul li {
-	padding: 11px 14px 9px 11px;
+	padding: 11px 7.21649485% 9px 5.67010309%;
 	font-size: 12px;
 	line-height: 14px;
 	display: block;
