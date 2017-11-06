@@ -76,6 +76,7 @@
 
 .header-wrapper .main-menu > ul > li input {
 	display: none;
+	width: 10.625em;
 	border-radius: 0.2em;
 	padding: 0em 0.25em;
 	border: 0.0625em;
