@@ -12,11 +12,9 @@
 /******************Header******************/
 .header-wrapper {
 	background-color: #76c7c0;
-	/*80px*/
 }
 
 .header-wrapper .logo {
-	/*41px expected 31px*/
 	padding-left: 0.5625em;
 	float: left;
 }
@@ -37,6 +35,7 @@
 	background-color: #ececec;
 	padding: 1.75em 0em 1.5625em 0em;
 	color: #7f8c8c;
+	position: relative;
 }
 
 .header-wrapper .head-section .heading {
@@ -56,8 +55,12 @@
 	color: #7f8c8c;
 }
 
+.content-wrapper .container {
+	background: url('../images/headline-arrow.png') no-repeat;
+}
+
 .content-wrapper .main-slider ul.nav {
-	padding: 1.0625em 0em 4.6875em 0em;  /*17/75*/
+	padding: 1.375em 0em 4em 0em;  /*17/75*/
 }
 
 .content-wrapper .col2-right .description {
@@ -71,25 +74,28 @@
 }
 
 .content-wrapper .project-slider {
-	margin: 4.1875em 0em 3.5625em 0em;
+	margin: 4.1875em 0em 5.625em 0em;
+	background: url('../images/border-pixel.png') repeat-x;
+	background-position:  0em 1.125em;
 }
 
-.content-wrapper .project-slider li {
-	margin: 0em 0.9375em;
+.content-wrapper .project-slider .heading .title {
+	background-color: #f3f3f3;
 	float: left;
 }
 
-.content-wrapper .project-slider li img {
-	width: 16.875em;
-	height: 16.875em;
+.content-wrapper .project-slider .heading {
+	padding-bottom: 3.6875em;
 }
 
-.content-wrapper .project-slider li:first-child {
-	margin-left: 0em;
+.content-wrapper .project-slider h3 {
+	background: url('../images/border-starter.png') no-repeat center right;
+	padding-right: 1.25em;
 }
 
-.content-wrapper .project-slider li:last-child {
-	margin-right: 0em;
+.content-wrapper .project-slider .slider-content > li {
+	margin: 0em 1.282051282%;
+	float: left;
 }
 
 /******************Footer******************/
@@ -99,7 +105,7 @@
 }
 
 .footer-wrapper .col-3-right {
-
+	width: 100%;
 }
 
 .footer-wrapper .col-2-right {
@@ -108,7 +114,8 @@
 }
 
 .footer-wrapper .col-2-right .website-info {
-	width: 46.25%;
+	width: 45.625%;
+	padding-left: 0.625%;
 	float: left;
 }
 
@@ -142,7 +149,7 @@
 
 .footer-wrapper .detail-section {
 	background: url('../images/footer-scale.png') repeat-x;
-	padding: 2.875em 0em;
+	padding: 2.8125em 0em 2.1875em 0em;
 }
 
 .footer-wrapper .owner-section {
