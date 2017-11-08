@@ -50,7 +50,7 @@ mainContent.appendChild(horizontalLine);
 mainContent.appendChild(detail);
 mainContent.appendChild(detailList);
 
-picture.setAttribute("src", "https://www.gravatar.com/avatar/9a4a47e785286d97325855472ec979d2?s=200");
+picture.setAttribute("src", "profile.jpg");
 picture.setAttribute("alt", "My profile picture");
 picture.style.display = "block";
 picture.style.borderRadius = "0.3125em";

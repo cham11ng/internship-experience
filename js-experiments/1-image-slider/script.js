@@ -10,6 +10,10 @@ container.appendChild(control);
 control.appendChild(previous);
 control.appendChild(next);
 
+container.style.overflow = "hidden";
+container.style.width = "270px";
+container.style.margin = "0 auto";
+
 control.style.width = "17em";
 control.style.margin = "0em auto";
 
@@ -34,10 +38,8 @@ previous.style.backgroundColor = "#00bcd4";
 previous.style.color = "#ffffff";
 
 imagesUl.style.margin = "0em";
-imagesUl.style.width = "100%";
 imagesUl.style.padding = "0em";
 imagesUl.style.listStyle = "none";
-imagesUl.style.overflow = "hidden";
 
 var images = [
 	"a.png",
@@ -48,22 +50,48 @@ var images = [
 	"f.png"
 ];
 
+var position = 0;
+
 for (var i = 0; i < images.length; i++) {
 	var imageList = document.createElement("li");
 	var image = document.createElement("img");
 	imagesUl.appendChild(imageList);
+	imagesUl.style.width = "5000px";
 	imageList.appendChild(image);
 	imageList.style.display = "inline-block";
 	image.src = images[i];
 }
 
-var position = 0;
+function marginLeftValue(index) {
+	return index * (-270);
+}
+
+function addStatus(from, to) {
+	if (from < to)
+		return true;
+	else
+		return false;
+}
+
+function transitionEffect(index, offset) {
+	var i = parseInt(imagesUl.style.marginLeft);
+	var transitionInterval = setInterval(function() {
+		if (i == marginLeftValue(index)) {
+			clearInterval(transitionInterval);
+		}
+		imagesUl.style.marginLeft = i + "px";
+		(addStatus(i, marginLeftValue(index))) ? i += offset : i -= offset;
+	}, 15);
+}
+
 next.onclick = function() {
 	position = (++position) % images.length;
-	console.log(position);
+	transitionEffect(position, 9);
+	console.log("Position", position);
 };
 
 previous.onclick = function() {
 	position = Math.abs((--position + images.length) % images.length);
-	console.log(position);
+	transitionEffect(position, 9);
+	console.log("Position", position);
 };
