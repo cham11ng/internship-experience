@@ -50,7 +50,7 @@ var images = [
 	"f.png"
 ];
 
-var position = 0;
+var current = 0;
 
 for (var i = 0; i < images.length; i++) {
 	var imageList = document.createElement("li");
@@ -66,32 +66,32 @@ function marginLeftValue(index) {
 	return index * (-270);
 }
 
-function addStatus(from, to) {
-	if (from < to)
-		return true;
-	else
-		return false;
-}
+function transitionEffect(previous, current) {
+	var from = marginLeftValue(previous);
+	var to = marginLeftValue(current);
+	var offset = Math.abs((from - to) / 30);
 
-function transitionEffect(index, offset) {
-	var i = parseInt(imagesUl.style.marginLeft);
 	var transitionInterval = setInterval(function() {
-		if (i == marginLeftValue(index)) {
+		if (from == to) {
 			clearInterval(transitionInterval);
 		}
-		imagesUl.style.marginLeft = i + "px";
-		(addStatus(i, marginLeftValue(index))) ? i += offset : i -= offset;
+		imagesUl.style.marginLeft = from + "px";
+		if (from < to) {
+			from += offset;
+		} else {
+			from -= offset;
+		}
 	}, 15);
 }
 
 next.onclick = function() {
-	position = (++position) % images.length;
-	transitionEffect(position, 9);
-	console.log("Position", position);
+	previous = current;
+	current = (++current) % images.length;
+	transitionEffect(previous, current);
 };
 
 previous.onclick = function() {
-	position = Math.abs((--position + images.length) % images.length);
-	transitionEffect(position, 9);
-	console.log("Position", position);
+	previous = current;
+	current = Math.abs((--current + images.length) % images.length);
+	transitionEffect(previous, current);
 };
