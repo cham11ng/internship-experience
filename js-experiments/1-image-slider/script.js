@@ -95,3 +95,4 @@ previous.onclick = function() {
 	current = Math.abs((--current + images.length) % images.length);
 	transitionEffect(previous, current);
 };
+x	
