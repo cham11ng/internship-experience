@@ -30,12 +30,13 @@
 /******************Header******************/
 .header-wrapper .main-menu ul {
 	list-style: none;
+	text-align: center;
 }
 
 .header-wrapper .main-menu > ul > li {
 	text-transform: uppercase;
 	padding: 0em 1.6875em;
-	float: left;
+	text-align: center;
 	position: relative;
 }
 

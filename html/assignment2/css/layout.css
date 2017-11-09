@@ -16,7 +16,6 @@
 
 .header-wrapper .logo {
 	padding-left: 0.5625em;
-	float: left;
 }
 
 .header-wrapper .menu-section {
@@ -28,7 +27,6 @@
 .header-wrapper .main-menu {
 	padding: 0.6875em 0em 0.5em 0em;
 	width: auto;
-	float: right;
 }
 
 .header-wrapper .head-section {
@@ -64,13 +62,11 @@
 }
 
 .content-wrapper .col2-right .description {
-	width: 65.811965812%;
-	float: left;
+	width: 100%;
 }
 
 .content-wrapper .col2-right .detail {
-	width: 23.076923077%;
-	float: right;
+	width: 100%;
 }
 
 .content-wrapper .project-slider {
@@ -109,20 +105,17 @@
 }
 
 .footer-wrapper .col-2-right {
-	width: 68.376068376%;
-	float: left;
+	width: 100%;
 }
 
 .footer-wrapper .col-2-right .website-info {
-	width: 45.625%;
-	padding-left: 0.625%;
-	float: left;
+	padding: 2em 0em;
+	width: 100%;
 }
 
 .footer-wrapper .col-2-right .list-column {
-	padding: 0% 3.75%;
-	width: 46.25%;
-	float: right;
+	padding: 2em 0em;
+	width: 100%;
 }
 
 .footer-wrapper .col-2-right .list-column .list {
@@ -139,8 +132,8 @@
 }
 
 .footer-wrapper .blog-info {
-	width: 31.623931624%;
-	float: right;
+	width: 100%;
+	padding: 2em 0em;
 }
 
 .footer-wrapper .blog-info li img {

@@ -1,0 +1,47 @@
+.header-wrapper .logo {
+	width: auto;
+	float: left;
+}
+
+.header-wrapper .main-menu {
+	padding: 0.6875em 0em 0.5em 0em;
+	width: auto;
+	float: right;
+}
+
+.header-wrapper .main-menu > ul > li {
+	float: left;
+}
+
+.content-wrapper .col2-right .description {
+	width: 65.811965812%;
+	float: left;
+}
+
+.content-wrapper .col2-right .detail {
+	width: 23.076923077%;
+	float: right;
+}
+
+.footer-wrapper .col-2-right {
+	width: 68.376068376%;
+	float: left;
+}
+
+.footer-wrapper .col-2-right .website-info {
+	width: 45.625%;
+	padding: 0% 0% 0% 0.625%;
+	float: left;
+}
+
+.footer-wrapper .col-2-right .list-column {
+	padding: 0% 3.75%;
+	width: 46.25%;
+	float: right;
+}
+
+.footer-wrapper .blog-info {
+	padding: 0em;
+	width: 31.623931624%;
+	float: right;
+}
