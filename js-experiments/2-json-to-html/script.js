@@ -39,8 +39,10 @@ for (var i = 0; i < data.length; i++) {
 
 function jsonToHtml(datum) {
     var parent = convertIndividualJSONToHTML(datum);
-    for (var i = 0; i < datum.children.length; i++) {
-        parent.appendChild(convertIndividualJSONToHTML(datum.children[i]));
+    if (datum.children) {
+        for (var i = 0; i < datum.children.length; i++) {
+            parent.appendChild(convertIndividualJSONToHTML(datum.children[i]));
+        }
     }
     
     wrapper.appendChild(parent);
