@@ -73,8 +73,8 @@ container.style.backgroundColor = "silver";
 
 var homeScreen = document.createElement("div");
 container.appendChild(homeScreen);
-homeScreen.style.height = containerHeight-100 + "px";
-homeScreen.style.width = containerWidth-20 + "px";
+homeScreen.style.height = containerHeight - 100 + "px";
+homeScreen.style.width = containerWidth - 20 + "px";
 homeScreen.style.backgroundColor = "#0288D1";
 homeScreen.style.zIndex = 30;
 homeScreen.style.color = "#B3E5FC";

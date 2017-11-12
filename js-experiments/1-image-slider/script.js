@@ -42,57 +42,56 @@ imagesUl.style.padding = "0em";
 imagesUl.style.listStyle = "none";
 
 var images = [
-	"a.png",
-	"b.png",
-	"c.png",
-	"d.png",
-	"e.png",
-	"f.png"
+  "a.png",
+  "b.png",
+  "c.png",
+  "d.png",
+  "e.png",
+  "f.png"
 ];
 
 var current = 0;
 
 for (var i = 0; i < images.length; i++) {
-	var imageList = document.createElement("li");
-	var image = document.createElement("img");
-	imagesUl.appendChild(imageList);
-	imagesUl.style.width = "5000px";
-	imageList.appendChild(image);
-	imageList.style.display = "inline-block";
-	image.src = images[i];
+  var imageList = document.createElement("li");
+  var image = document.createElement("img");
+  imagesUl.appendChild(imageList);
+  imagesUl.style.width = "5000px";
+  imageList.appendChild(image);
+  imageList.style.display = "inline-block";
+  image.src = images[i];
 }
 
 function marginLeftValue(index) {
-	return index * (-270);
+  return index * (-270);
 }
 
 function transitionEffect(previous, current) {
-	var from = marginLeftValue(previous);
-	var to = marginLeftValue(current);
-	var offset = Math.abs((from - to) / 30);
+  var from = marginLeftValue(previous);
+  var to = marginLeftValue(current);
+  var offset = Math.abs((from - to) / 30);
 
-	var transitionInterval = setInterval(function() {
-		if (from == to) {
-			clearInterval(transitionInterval);
-		}
-		imagesUl.style.marginLeft = from + "px";
-		if (from < to) {
-			from += offset;
-		} else {
-			from -= offset;
-		}
-	}, 15);
+  var transitionInterval = setInterval(function() {
+    if (from == to) {
+      clearInterval(transitionInterval);
+    }
+    imagesUl.style.marginLeft = from + "px";
+    if (from < to) {
+      from += offset;
+    } else {
+      from -= offset;
+    }
+  }, 15);
 }
 
 next.onclick = function() {
-	previous = current;
-	current = (++current) % images.length;
-	transitionEffect(previous, current);
+  previous = current;
+  current = (++current) % images.length;
+  transitionEffect(previous, current);
 };
 
 previous.onclick = function() {
-	previous = current;
-	current = Math.abs((--current + images.length) % images.length);
-	transitionEffect(previous, current);
+  previous = current;
+  current = Math.abs((--current + images.length) % images.length);
+  transitionEffect(previous, current);
 };
-x	

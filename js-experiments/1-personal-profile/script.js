@@ -79,62 +79,62 @@ detail.style.margin = ".25em";
 detail.style.letterSpacing = "-1px";
 
 var personalDetail = {
-	"Currently Working": "Leapfrog Technology Incorporation (Intern)",
-	"Education": "Bachelor in Engineering (Computer Engineering)",
-	"Interests": [
-		"Singing",
-		"Football",
-		"Basketball"
-	],
-	"Completed Projects": [
-		"Tutangle: Static and Responsive webpage design, photoshop, UI/UX, good design/bad design",
-		"MODUSversus - Slicing and Responsive webpage design"
-	],
-	"Email": "sgr.raee@gmail.com",
-	"Address": "Bhaktapur"
+  "Currently Working": "Leapfrog Technology Incorporation (Intern)",
+  "Education": "Bachelor in Engineering (Computer Engineering)",
+  "Interests": [
+    "Singing",
+    "Football",
+    "Basketball"
+  ],
+  "Completed Projects": [
+    "Tutangle: Static and Responsive webpage design, photoshop, UI/UX, good design/bad design",
+    "MODUSversus - Slicing and Responsive webpage design"
+  ],
+  "Email": "sgr.raee@gmail.com",
+  "Address": "Bhaktapur"
 };
 
 for (var detail in personalDetail) {
-	if (personalDetail.hasOwnProperty(detail)) {
-		var list = document.createElement("li");
-		var key = document.createElement("div");
-		detailList.appendChild(list);
-		list.appendChild(key);
+  if (personalDetail.hasOwnProperty(detail)) {
+    var list = document.createElement("li");
+    var key = document.createElement("div");
+    detailList.appendChild(list);
+    list.appendChild(key);
 
-		list.style.padding = "0.375em";
+    list.style.padding = "0.375em";
 
-		detailList.style.listStyle = "none";
-		detailList.style.padding = "0em";
-		detailList.style.margin = "0em";
+    detailList.style.listStyle = "none";
+    detailList.style.padding = "0em";
+    detailList.style.margin = "0em";
 
-		key.style.display = "inline-block";
-		key.style.textAlign = "right";
-		key.style.fontFamily = "Verdana";
-		key.style.paddingRight = "1em";
-		key.style.fontWeight = "bold";
-		key.style.width = "37.234042553%";
-		key.innerHTML = detail;
+    key.style.display = "inline-block";
+    key.style.textAlign = "right";
+    key.style.fontFamily = "Verdana";
+    key.style.paddingRight = "1em";
+    key.style.fontWeight = "bold";
+    key.style.width = "37.234042553%";
+    key.innerHTML = detail;
 
-		if (Array.isArray(personalDetail[detail])) {
-			var ulValueLists = document.createElement("ul");
-			ulValueLists.style.display = "inline-block";
-			ulValueLists.style.padding = "0em 1em";
-			ulValueLists.style.width = "57.446808511%";
-			for (var i = 0; i < personalDetail[detail].length; i++) {
-				var liValue = document.createElement("li");
-				list.appendChild(ulValueLists);
-				ulValueLists.appendChild(liValue);
-				liValue.style.fontFamily = "Verdana";
-				liValue.style.padding = "0.3125em 0em";
-				liValue.innerHTML = personalDetail[detail][i];
-			}
-		} else {
-			var value = document.createElement("span");
-			list.appendChild(value);
-			value.style.display = "inline-block";
-			value.style.fontFamily = "Verdana";
-			value.style.width = "57.446808511%";
-			value.innerHTML = personalDetail[detail];
-		}
-	}
+    if (Array.isArray(personalDetail[detail])) {
+      var ulValueLists = document.createElement("ul");
+      ulValueLists.style.display = "inline-block";
+      ulValueLists.style.padding = "0em 1em";
+      ulValueLists.style.width = "57.446808511%";
+      for (var i = 0; i < personalDetail[detail].length; i++) {
+        var liValue = document.createElement("li");
+        list.appendChild(ulValueLists);
+        ulValueLists.appendChild(liValue);
+        liValue.style.fontFamily = "Verdana";
+        liValue.style.padding = "0.3125em 0em";
+        liValue.innerHTML = personalDetail[detail][i];
+      }
+    } else {
+      var value = document.createElement("span");
+      list.appendChild(value);
+      value.style.display = "inline-block";
+      value.style.fontFamily = "Verdana";
+      value.style.width = "57.446808511%";
+      value.innerHTML = personalDetail[detail];
+    }
+  }
 }
