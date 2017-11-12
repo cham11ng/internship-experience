@@ -15,7 +15,7 @@ function Car() {
   this.areaHeight = 0;
   this.areaWidth = 0;
   this.acceleration = 0;
-  this.element = "";
+  this.element = '';
 
   var that = this;
 
@@ -35,18 +35,18 @@ function Car() {
   };
 
   var setStyle = function() {
-    that.element.style.height = carHeight + "px";
-    that.element.style.width = carWidth + "px";
-    that.element.style.position = "absolute";
+    that.element.style.height = carHeight + 'px';
+    that.element.style.width = carWidth + 'px';
+    that.element.style.position = 'absolute';
 
-    var carImage = document.createElement("img");
-    carImage.src = "car.png";
+    var carImage = document.createElement('img');
+    carImage.src = 'car.png';
     that.element.appendChild(carImage);
   }
 
   var setElementPosition = function() {
-    that.element.style.left = that.x + "px";
-    that.element.style.top = that.y + "px";
+    that.element.style.left = that.x + 'px';
+    that.element.style.top = that.y + 'px';
   };
 
   this.updatePosition = function() {
@@ -81,7 +81,7 @@ function World() {
   this.obstacle = 0;
   this.acceleration = 0;
   this.backgroundInterval = function() {};
-  this.element = "";
+  this.element = '';
 
   var that = this;
 
@@ -95,19 +95,19 @@ function World() {
   }
 
   var setStyle = function() {
-    that.element.style.height = containerHeight + "px";
-    that.element.style.width = containerWidth + "px";
-    that.element.style.margin = "10px auto";
-    that.element.style.position = "relative";
-    that.element.style.cursor = "pointer";
+    that.element.style.height = containerHeight + 'px';
+    that.element.style.width = containerWidth + 'px';
+    that.element.style.margin = '10px auto';
+    that.element.style.position = 'relative';
+    that.element.style.cursor = 'pointer';
     that.element.style.background = "url('road.png') repeat-y";
-    that.element.style.backgroundPosition = "center top 0px";
+    that.element.style.backgroundPosition = 'center top 0px';
   }
 
   var moveBackground = function() {
     that.backgroundInterval = setInterval(function() {
       that.top += that.acceleration;
-      that.element.style.backgroundPosition = "center top " + that.top + "px";
+      that.element.style.backgroundPosition = 'center top ' + that.top + 'px';
     }, 50);
   };
 
@@ -116,7 +116,7 @@ function World() {
   };
 
   var initializePlayer = function() {
-    var carElement = document.createElement("div");
+    var carElement = document.createElement('div');
     that.element.appendChild(carElement);
 
     that.player = new Car();
@@ -141,10 +141,10 @@ function World() {
   };
 }
 
-var wrapper = document.getElementById("wrapper");
+var wrapper = document.getElementById('wrapper');
 var worlds = [];
 for (var i = 0; i < 1; i++) {
-  var container = document.createElement("div");
+  var container = document.createElement('div');
   wrapper.appendChild(container);
 
   var world = new World();
@@ -183,6 +183,6 @@ document.onkeydown = function(event) {
       break;
 
     default:
-      console.log("Invalid Move");
+      console.log('Invalid Move');
   }
 };

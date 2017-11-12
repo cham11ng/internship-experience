@@ -9,7 +9,7 @@ function Ant() {
   this.ydirection = 1;
   this.areaHeight = 0;
   this.areaWidth = 0;
-  this.element = "";
+  this.element = '';
 
   var that = this;
 
@@ -26,8 +26,8 @@ function Ant() {
   }
 
   var setElementPosition = function() {
-    that.element.style.left = that.x + "px";
-    that.element.style.top = that.y + "px";
+    that.element.style.left = that.x + 'px';
+    that.element.style.top = that.y + 'px';
   }
 
   this.updatePosition = function() {
@@ -49,7 +49,7 @@ function Ant() {
   }
 
   this.die = function() {
-    this.element.firstElementChild.src = "ant-smash.png";
+    this.element.firstElementChild.src = 'ant-smash.png';
     this.dx = 0;
     this.dy = 0;
     return this.element;
@@ -61,24 +61,24 @@ var containerWidth = 800;
 var antHeight = 50;
 var antWidth = 50
 
-var wrapper = document.getElementById("wrapper");
-var container = document.createElement("div");
+var wrapper = document.getElementById('wrapper');
+var container = document.createElement('div');
 wrapper.appendChild(container);
-container.style.height = containerHeight + "px";
-container.style.width = containerWidth + "px";
-container.style.margin = "0 auto";
-container.style.position = "relative";
-container.style.cursor = "pointer";
-container.style.backgroundColor = "silver";
+container.style.height = containerHeight + 'px';
+container.style.width = containerWidth + 'px';
+container.style.margin = '0 auto';
+container.style.position = 'relative';
+container.style.cursor = 'pointer';
+container.style.backgroundColor = 'silver';
 
 function antCreate() {
-  var antElement = document.createElement("div");
-  antElement.style.position = "absolute";
+  var antElement = document.createElement('div');
+  antElement.style.position = 'absolute';
 
-  var antImage = document.createElement("img");
-  antImage.src = "ant.png";
-  antImage.style.height = antHeight + "px";
-  antImage.style.width = antWidth + "px";
+  var antImage = document.createElement('img');
+  antImage.src = 'ant.png';
+  antImage.style.height = antHeight + 'px';
+  antImage.style.width = antWidth + 'px';
   antElement.appendChild(antImage);
   return antElement;
 }

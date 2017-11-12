@@ -10,7 +10,7 @@ function Ant() {
   this.ydirection = 1;
   this.areaHeight = 0;
   this.areaWidth = 0;
-  this.element = "";
+  this.element = '';
 
   var that = this;
 
@@ -29,19 +29,19 @@ function Ant() {
   }
 
   var setStyles = function() {
-    that.element.style.position = "absolute";
+    that.element.style.position = 'absolute';
 
-    var antImage = document.createElement("img");
-    antImage.src = "../2-ant-smasher/ant.png";
-    antImage.style.height = antHeight + "px";
-    antImage.style.width = antWidth + "px";
-    antImage.style.cursor = "pointer";
+    var antImage = document.createElement('img');
+    antImage.src = '../2-ant-smasher/ant.png';
+    antImage.style.height = antHeight + 'px';
+    antImage.style.width = antWidth + 'px';
+    antImage.style.cursor = 'pointer';
     that.element.appendChild(antImage);
   };
 
   var setElementPosition = function() {
-    that.element.style.left = that.x + "px";
-    that.element.style.top = that.y + "px";
+    that.element.style.left = that.x + 'px';
+    that.element.style.top = that.y + 'px';
   };
 
   this.updatePosition = function() {
@@ -63,7 +63,7 @@ function Ant() {
   };
 
   this.die = function() {
-    this.element.firstElementChild.src = "../2-ant-smasher/ant-smash.png";
+    this.element.firstElementChild.src = '../2-ant-smasher/ant-smash.png';
     this.dx = 0;
     this.dy = 0;
     this.dead = true;

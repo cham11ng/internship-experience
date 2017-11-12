@@ -1,5 +1,5 @@
 function World() {
-  this.element = "";
+  this.element = '';
   this.totalAnts = 0;
   this.deadAnts = 0;
   this.backgroundInterval = function() {};
@@ -7,9 +7,9 @@ function World() {
   var antValues = [];
   var antObjects = [];
   var that = this;
-  var title = document.createElement("span");
-  var button = document.createElement("div");
-  var homeScreen = document.createElement("div");
+  var title = document.createElement('span');
+  var button = document.createElement('div');
+  var homeScreen = document.createElement('div');
 
   this.init = function(props) {
     this.element = props.element;
@@ -20,34 +20,34 @@ function World() {
   }
 
   var setStyle = function() {
-    that.element.style.width = containerWidth + "px";
-    that.element.style.height = containerHeight + "px";
-    that.element.style.margin = "0 auto";
-    that.element.style.position = "relative";
-    that.element.style.backgroundColor = "#80DEEA";
+    that.element.style.width = containerWidth + 'px';
+    that.element.style.height = containerHeight + 'px';
+    that.element.style.margin = '0 auto';
+    that.element.style.position = 'relative';
+    that.element.style.backgroundColor = '#80DEEA';
 
     homeScreen.appendChild(title);
     homeScreen.appendChild(button);
     that.element.appendChild(homeScreen);
-    homeScreen.style.height = containerHeight - 300 + "px";
-    homeScreen.style.width = containerWidth - 20 + "px";
-    homeScreen.style.backgroundColor = "#0288D1";
-    homeScreen.style.color = "#B3E5FC";
-    homeScreen.style.padding = "150px 10px";
-    homeScreen.style.textAlign = "center";
-    homeScreen.style.fontWeight = "bold";
+    homeScreen.style.height = containerHeight - 300 + 'px';
+    homeScreen.style.width = containerWidth - 20 + 'px';
+    homeScreen.style.backgroundColor = '#0288D1';
+    homeScreen.style.color = '#B3E5FC';
+    homeScreen.style.padding = '150px 10px';
+    homeScreen.style.textAlign = 'center';
+    homeScreen.style.fontWeight = 'bold';
 
-    title.style.fontSize = "50px";
-    title.innerHTML = "ANT SMASHER";
+    title.style.fontSize = '50px';
+    title.innerHTML = 'ANT SMASHER';
 
-    button.style.fontSize = "30px";
-    button.style.padding = "10px";
-    button.style.margin = "40px auto";
-    button.style.textAlign = "center";
-    button.style.width = "200px";
-    button.style.backgroundColor = "#0D47A1";
-    button.style.cursor = "pointer";
-    button.innerHTML = "Play";
+    button.style.fontSize = '30px';
+    button.style.padding = '10px';
+    button.style.margin = '40px auto';
+    button.style.textAlign = 'center';
+    button.style.width = '200px';
+    button.style.backgroundColor = '#0D47A1';
+    button.style.cursor = 'pointer';
+    button.innerHTML = 'Play';
   }
 
   var start = function() {
@@ -61,7 +61,7 @@ function World() {
       that.backgroundInterval = setInterval(function() {
         if (that.deadAnts == that.totalAnts) {
           title.innerHTML = "Congratulations! You've smashed all ants.";
-          button.innerHTML = "Play Again";
+          button.innerHTML = 'Play Again';
           that.element.appendChild(homeScreen);
           stop();
         }
@@ -102,7 +102,6 @@ function World() {
   }
 
   var checkInitalCollision = function(newAntValue) {
-    console.log(antValues.length);
     for (j = 0; j < antValues.length - 1; j++) {
       if (checkCollision(antValues[j], newAntValue)) {
         return true;
@@ -113,7 +112,7 @@ function World() {
 
   var createAnts = function() {
     for (var i = 0; i < that.totalAnts; i++) {
-      var antElement = document.createElement("div");
+      var antElement = document.createElement('div');
       that.element.appendChild(antElement);
       antValues[i].element = antElement;
 
