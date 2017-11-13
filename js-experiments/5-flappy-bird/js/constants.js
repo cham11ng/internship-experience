@@ -1,0 +1,10 @@
+const CANVAS_WIDTH = 1040;
+const CANVAS_HEIGHT = 350;
+const BIRD_FLY_HEIGHT_AREA = 290;
+const BACKGROUND_DISPLACEMENT = 0.75;
+const SPEED = 15; // lower is faster
+
+const BIRD_HEIGHT = 40;
+const BIRD_WIDTH = 40;
+const BIRD_FLY_HEIGHT = 100;
+const BIRD_RETARDATION = -4;
