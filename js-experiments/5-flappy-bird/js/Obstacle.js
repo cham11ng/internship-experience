@@ -1,12 +1,12 @@
 class Obstacle {
   constructor(context, x, y, height, width, gap, dx) {
     this.x = x;
-    this.y = y+ OBSTACLE_TOP_HEIGHT;
+    this.y = y + OBSTACLE_TOP_HEIGHT;
+    this.dx = dx;
     this.height = gap;
     this.width = width;
     this.yPosition = y;
-    this.areaHeight = height;
-    this.dx = dx;
+    this.totalHeight = height;
     this.context = context;
 
     this.img = new Image();
@@ -19,7 +19,7 @@ class Obstacle {
   }
 
   draw() {
-    this.context.drawImage(this.img, this.x, this.yPosition, this.width, this.areaHeight);
+    this.context.drawImage(this.img, this.x, this.yPosition, this.width, this.totalHeight);
     return true;
   }
 }

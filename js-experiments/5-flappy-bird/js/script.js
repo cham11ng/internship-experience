@@ -6,10 +6,12 @@ canvas.onclick = birdEvent();
 
 function birdEvent() {
   return (event) => {
-    if (world.bird.isDead === false && (event.type === 'click' || event.keyCode === 32)) {
+    if (world.bird.isDead === false && (event.type === 'click' || event.keyCode === JUMP_KEY)) {
       world.bird.fly();
-    } else if (world.bird.isDead && event.keyCode === 13) {
+    } else if (world.bird.isDead && event.keyCode === START_KEY) {
       world.restart();
     }
   }
 }
+
+world.start();
