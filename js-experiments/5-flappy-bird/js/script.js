@@ -6,7 +6,7 @@ canvas.onclick = birdEvent();
 
 function birdEvent() {
   return (event) => {
-    if (world.bird.dead === false && (event.type === 'click' || event.keyCode === 32)) {
+    if (world.bird.isDead === false && (event.type === 'click' || event.keyCode === 32)) {
       world.bird.fly();
     }
   }

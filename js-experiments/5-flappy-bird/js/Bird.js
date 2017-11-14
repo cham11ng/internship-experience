@@ -1,23 +1,26 @@
 class Bird {
-  constructor(context, x, y, height, width, angle, finalAngle, flySpeed, deltaTime, fallingConstant, flyHeightArea) {
+  constructor(context, x, y, height, width, angle, finalAngle, flyHeight, deltaTime, fallingConstant, flyHeightArea) {
     this.x = x;
     this.y = y;
     this.height = height;
     this.width = width;
-    this.flySpeed = flySpeed;
+    this.flyHeight = flyHeight;
     this.fallingConstant = fallingConstant;
     this.flyHeightArea = flyHeightArea;
     this.angle = angle;
-    this.finalAngle = finalAngle
+    this.finalAngle = finalAngle;
     this.deltaTime = deltaTime;
     this.context = context;
 
-    this.dead = false;
-    this.verticleSpeed = 0;
+    this.img = new Image();
+    this.img.src = 'images/bird.png';
+
+    this.isDead = false;
+    this.verticleDisplacement = 0;
   }
 
   fly() {
-    this.verticleSpeed = this.flySpeed;
+    this.verticleDisplacement = this.flyHeight;
     this.angle = -20;
   }
 
@@ -27,20 +30,18 @@ class Bird {
     }
 
     if (this.y < (this.flyHeightArea - this.height)) {
-      this.y += (this.verticleSpeed * this.deltaTime);
-      this.verticleSpeed -= (this.fallingConstant * this.deltaTime);
+      this.y += (this.verticleDisplacement * this.deltaTime);
+      this.verticleDisplacement += (this.fallingConstant * this.deltaTime);
     } else {
-      this.dead = true;
+      this.isDead = true;
     }
     this.draw();
   }
 
   draw() {
-    let img = new Image();
-    img.src = 'images/bird.png';
     this.context.save();
     this.rotate();
-    this.context.drawImage(img, this.x, this.y, this.height, this.width);
+    this.context.drawImage(this.img, this.x, this.y, this.width, this.height);
     this.context.restore();
     return true;
   }
