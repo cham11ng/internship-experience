@@ -8,6 +8,8 @@ function birdEvent() {
   return (event) => {
     if (world.bird.isDead === false && (event.type === 'click' || event.keyCode === 32)) {
       world.bird.fly();
+    } else if (world.bird.isDead && event.keyCode === 13) {
+      world.restart();
     }
   }
 }

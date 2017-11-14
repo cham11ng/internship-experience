@@ -8,10 +8,11 @@ function Car() {
   this.areaWidth = 0;
   this.acceleration = 0;
   this.element = "";
+  this.isCrashed = false;
 
   var that = this;
 
-  this.init = function(props) {
+  this.init = function(props) { 
     this.x = props.x;
     this.y = props.y;
     this.dx = props.dx;

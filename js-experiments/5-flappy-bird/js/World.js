@@ -7,14 +7,13 @@ class World {
     this.bird = this.createBird();
     this.obstacles = [];
     this.score = 0;
+    this.best = 0;
     this.obstacles[0] = this.createObstacle();
 
     this.img = new Image();
     this.img.src = 'images/background.jpg';
-
     this.img.onload = () => {
-      this.worldInterval = setInterval(this.start(this.img), SPEED);
-      return this.worldInterval;
+      this.intervalManager(true);
     }
   }
 
@@ -53,6 +52,10 @@ class World {
   start(img) {
     return () => {
       if (this.bird.isDead) {
+        this.context.font = 'bold 30px serif';
+        this.context.fillStyle = 'black';
+        this.context.textAlign = 'center';
+        this.context.fillText("Press Enter to continue...", CANVAS_WIDTH/2, CANVAS_HEIGHT / 2);
         this.stop();
       } else {
         let totalObstacle = this.obstacles.length;
@@ -73,14 +76,44 @@ class World {
 
         if (this.bird.x + this.bird.width > this.obstacles[this.score].x + this.obstacles[this.score].width) {
           this.score++;
+          if (this.score > this.best) {
+            this.best = this.score;
+          }
         }
         this.bird.fall();
+        this.context.font = 'bold 48px serif';
+        this.context.textAlign = 'left';
+        this.context.fillStyle = 'white';
+        this.context.fillText(this.score, 10, 40);
+        this.context.font = 'bold 30px serif';
+        this.context.fillText('BEST', 10, 70);
+        this.context.fillText(this.best, 10, 95);
       }
     }
   }
 
+  restart() {
+    this.obstacles = [];
+    this.score = 0;
+    this.bird.isDead = false;
+    this.bird.x = BIRD_X_POSITION;
+    this.bird.y = BIRD_Y_POSITION;
+    this.bird.angle = 0;
+    this.bird.verticleDisplacement = 0;
+    this.obstacles[0] = this.createObstacle();
+    this.intervalManager(true);
+  }
+
   stop() {
-    clearInterval(this.worldInterval);
+    this.intervalManager(false);
+  }
+
+  intervalManager(flag) {
+    if (flag) {
+      this.worldInterval = setInterval(this.start(this.img), SPEED);
+    } else {
+      clearInterval(this.worldInterval);
+    }
   }
 
   checkCollision(bird, obstacle) {

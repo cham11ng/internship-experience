@@ -13,9 +13,9 @@ function World() {
     this.acceleration = props.acceleration;
 
     setStyle();
-    run();
     initializePlayer();
     that.obstacles[0] = createObstacles();
+    run();
   }
 
   var setStyle = function() {
@@ -31,17 +31,31 @@ function World() {
 
   var run = function() {
     that.backgroundInterval = setInterval(function() {
-      that.top += that.acceleration;
-      that.element.style.backgroundPosition = "center top " + that.top + "px";
-      for (var i = 0; i < that.obstacles.length; i++) {
-        if (that.obstacles[i].y < that.obstacles[i].areaHeight) {
-          that.obstacles[i].updatePosition(that.acceleration);
+      if (that.player.isCrashed) {
+        stop();
+      } else {
+        that.top += that.acceleration;
+        that.element.style.backgroundPosition = "center top " + that.top + "px";
+        var totalObstacles = that.obstacles.length;
+        var spliceIndex = 0;
+        for (var i = 0; i < totalObstacles; i++) {
+          if (that.obstacles[i].y < that.obstacles[i].areaHeight) {
+            that.obstacles[i].updatePosition(that.acceleration);
+            spliceIndex = i;
+          }
+          if (checkCollision(that.player, that.obstacles[i])) {
+            that.player.isCrashed = true;
+          }
         }
-        checkCollision(that.player, that.obstacles[i]);
-      }
-      console.log(that.obstacles[i-1].y, that.obstacles[i-1].height/2);
-      if (that.obstacles[i-1].y > that.obstacles[i-1].height*3/2) {
-        that.obstacles[i] = createObstacles();
+
+        if (spliceIndex) {
+          that.obstacles[spliceIndex].element.remove();
+          that.obstacles.splice(spliceIndex, 1);
+        }
+
+        if (that.obstacles[i - 1].y > that.obstacles[i - 1].height * 3 / 2) {
+          that.obstacles[i] = createObstacles();
+        }
       }
     }, 50);
   };
@@ -104,8 +118,9 @@ function World() {
     var obstacleBottom = obstacle.y + obstacle.height;
 
     if ((playerRight > obstacleLeft) && (playerLeft < obstacleRight) && (playerBottom > obstacleTop) && (playerTop < obstacleBottom)) {
-      obstacle.ydirection *= -1;
-      stop();
+      return true;
     }
+
+    return false;
   }
 }

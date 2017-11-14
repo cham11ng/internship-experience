@@ -15,6 +15,10 @@ class Bird {
     this.img = new Image();
     this.img.src = 'images/bird.png';
 
+    this.img.onclick = () => {
+      console.log('safal');
+    }
+
     this.isDead = false;
     this.verticleDisplacement = 0;
   }
