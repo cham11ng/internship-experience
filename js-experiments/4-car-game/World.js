@@ -39,25 +39,22 @@ function World() {
         var totalObstacles = that.obstacles.length;
         var spliceIndex = 0;
         for (var i = 0; i < totalObstacles; i++) {
-          if (that.obstacles[i].y < that.obstacles[i].areaHeight) {
-            that.obstacles[i].updatePosition(that.acceleration);
-            spliceIndex = i;
-          }
+          that.obstacles[i].y < that.obstacles[i].areaHeight ? that.obstacles[i].updatePosition(that.acceleration) : spliceIndex = i;
           if (checkCollision(that.player, that.obstacles[i])) {
             that.player.isCrashed = true;
           }
+        }
+
+        if (that.obstacles[i - 1].y > that.obstacles[i - 1].height * 3 / 2) {
+          that.obstacles[i] = createObstacles();
         }
 
         if (spliceIndex) {
           that.obstacles[spliceIndex].element.remove();
           that.obstacles.splice(spliceIndex, 1);
         }
-
-        if (that.obstacles[i - 1].y > that.obstacles[i - 1].height * 3 / 2) {
-          that.obstacles[i] = createObstacles();
-        }
       }
-    }, 50);
+    }, SPEED);
   };
 
   var stop = function() {
