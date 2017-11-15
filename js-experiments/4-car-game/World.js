@@ -4,8 +4,10 @@ function World() {
   this.obstacles = [];
   this.acceleration = 0;
   this.backgroundInterval = function() {};
-  this.element = "";
-  this.bullet = "";
+  this.element = '';
+  this.bullet = '';
+  this.scoreElement = '';
+  this.missedElement = '';
   this.obstacleDuration = 0;
   this.totalMissedCar = 0;
   this.totalDestroyedCar = 0;
@@ -17,6 +19,8 @@ function World() {
     this.acceleration = props.acceleration;
 
     setStyle();
+    this.scoreElement = score();
+    this.missedElement = missed();
     initializePlayer();
     that.obstacles[0] = createObstacles();
     this.bullet = createFireObject();
@@ -24,14 +28,39 @@ function World() {
   }
 
   var setStyle = function() {
-    that.element.style.height = containerHeight + "px";
-    that.element.style.width = containerWidth + "px";
-    that.element.style.margin = "10px auto";
-    that.element.style.overflow = "hidden";
-    that.element.style.position = "relative";
-    that.element.style.cursor = "pointer";
+    that.element.style.height = containerHeight + 'px';
+    that.element.style.width = containerWidth + 'px';
+    that.element.style.margin = '10px auto';
+    that.element.style.overflow = 'hidden';
+    that.element.style.position = 'relative';
+    that.element.style.cursor = 'pointer';
     that.element.style.background = "url('road.png') repeat-y";
-    that.element.style.backgroundPosition = "center top 0px";
+    that.element.style.backgroundPosition = 'center top 0px';
+  }
+
+  var score = function() {
+    var score = document.createElement('div');
+    that.element.appendChild(score);
+    score.style.padding = '10px';
+    score.style.fontSize = '25px';
+    score.style.display = 'inline-block';
+    score.style.color = 'white';
+    score.style.fontWeight = 'bold';
+    score.innerHTML = 'SCORE 0';
+    return score;
+  }
+
+  var missed = function() {
+    var missed = document.createElement('div');
+    that.element.appendChild(missed);
+    missed.style.padding = '10px';
+    missed.style.fontSize = '25px';
+    missed.style.color = 'white';
+    missed.style.fontWeight = 'bold';
+    missed.style.display = 'inline-block';
+    missed.style.float = 'right';
+    missed.innerHTML = 'MISSED 0';
+    return missed;
   }
 
   var run = function() {
@@ -42,7 +71,7 @@ function World() {
         var totalObstacle = that.obstacles.length;
         var spliceIndexes = [];
         that.top += that.acceleration;
-        that.element.style.backgroundPosition = "center top " + that.top + "px";
+        that.element.style.backgroundPosition = 'center top ' + that.top + 'px';
 
         if (that.bullet.y < -that.bullet.height) {
           that.bullet.isTriggered = false;
@@ -57,7 +86,7 @@ function World() {
             that.obstacles[i].updatePosition(that.acceleration);
           } else {
             spliceIndexes.push(i);
-            that.totalMissedCar += 1;
+            that.missedElement.innerHTML = 'MISSED ' + (++that.totalMissedCar);
           }
 
           if (checkCollision(that.player, that.obstacles[i])) {
@@ -67,7 +96,7 @@ function World() {
             that.bullet.isTriggered = false;
             that.bullet.x = that.player.x;
             that.bullet.yPositionReset();
-            that.totalDestroyedCar += 1;
+            that.scoreElement.innerHTML = 'SCORE ' + (++that.totalDestroyedCar);
           }
         }
 
@@ -92,7 +121,7 @@ function World() {
   };
 
   var initializePlayer = function() {
-    var carElement = document.createElement("div");
+    var carElement = document.createElement('div');
     that.element.appendChild(carElement);
 
     that.player = new Car();
@@ -109,7 +138,7 @@ function World() {
   };
 
   var createObstacles = function() {
-    var obstacleELement = document.createElement("div");
+    var obstacleELement = document.createElement('div');
     var obstacle = new Obstacle();
 
     that.element.appendChild(obstacleELement);
@@ -126,7 +155,7 @@ function World() {
   }
 
   var createFireObject = function() {
-    var fireElement = document.createElement("div");
+    var fireElement = document.createElement('div');
     var bullet = new Bullet();
 
     that.element.appendChild(fireElement);
