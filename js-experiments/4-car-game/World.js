@@ -5,6 +5,10 @@ function World() {
   this.acceleration = 0;
   this.backgroundInterval = function() {};
   this.element = "";
+  this.bullet = "";
+  this.obstacleDuration = 0;
+  this.totalMissedCar = 0;
+  this.totalDestroyedCar = 0;
 
   var that = this;
 
@@ -15,6 +19,7 @@ function World() {
     setStyle();
     initializePlayer();
     that.obstacles[0] = createObstacles();
+    this.bullet = createFireObject();
     run();
   }
 
@@ -34,24 +39,49 @@ function World() {
       if (that.player.isCrashed) {
         stop();
       } else {
+        var totalObstacle = that.obstacles.length;
+        var spliceIndexes = [];
         that.top += that.acceleration;
         that.element.style.backgroundPosition = "center top " + that.top + "px";
-        var totalObstacles = that.obstacles.length;
-        var spliceIndex = 0;
-        for (var i = 0; i < totalObstacles; i++) {
-          that.obstacles[i].y < that.obstacles[i].areaHeight ? that.obstacles[i].updatePosition(that.acceleration) : spliceIndex = i;
+
+        if (that.bullet.y < -that.bullet.height) {
+          that.bullet.isTriggered = false;
+        }
+
+        if (that.bullet.isTriggered) {
+          that.bullet.updatePosition(that.acceleration);
+        }
+
+        for (var i = 0; i < totalObstacle; i++) {
+          if (that.obstacles[i].y < that.obstacles[i].areaHeight) {
+            that.obstacles[i].updatePosition(that.acceleration);
+          } else {
+            spliceIndexes.push(i);
+            that.totalMissedCar += 1;
+          }
+
           if (checkCollision(that.player, that.obstacles[i])) {
             that.player.isCrashed = true;
+          } else if (checkCollision(that.bullet, that.obstacles[i])) {
+            spliceIndexes.push(i);
+            that.bullet.isTriggered = false;
+            that.bullet.x = that.player.x;
+            that.bullet.yPositionReset();
+            that.totalDestroyedCar += 1;
           }
         }
 
-        if (that.obstacles[i - 1].y > that.obstacles[i - 1].height * 3 / 2) {
+        that.obstacleDuration += SPEED;
+        if (that.obstacleDuration > (OBSTACLE_DURATION - that.acceleration * ACCELERATION_CONSTANT)) {
           that.obstacles[i] = createObstacles();
+          that.obstacleDuration = 0;
         }
 
-        if (spliceIndex) {
-          that.obstacles[spliceIndex].element.remove();
-          that.obstacles.splice(spliceIndex, 1);
+        for (var i = 0; i < spliceIndexes.length; i++) {
+          if (that.obstacles.hasOwnProperty(spliceIndexes[i])) {
+            that.obstacles[spliceIndexes[i]].element.remove();
+            that.obstacles.splice(spliceIndexes[i], 1);
+          }
         }
       }
     }, SPEED);
@@ -84,7 +114,7 @@ function World() {
 
     that.element.appendChild(obstacleELement);
     obstacle.init({
-      y: 0,
+      y: -carHeight,
       acceleration: 1,
       height: carHeight,
       width: carWidth,
@@ -95,13 +125,43 @@ function World() {
     return obstacle;
   }
 
+  var createFireObject = function() {
+    var fireElement = document.createElement("div");
+    var bullet = new Bullet();
+
+    that.element.appendChild(fireElement);
+    bullet.init({
+      x: that.player.x,
+      dx: trackLane,
+      acceleration: 4,
+      height: carHeight,
+      width: carWidth,
+      areaHeight: containerHeight,
+      areaWidth: containerWidth,
+      element: fireElement
+    });
+    return bullet;
+  }
+
   this.accelerate = function() {
-    this.acceleration += 1;
+    if (this.acceleration <= MAX_ACCELERATION) {
+      this.acceleration += 1;
+    }
   };
 
   this.deaccelerate = function() {
-    this.acceleration -= 1;
+    if (this.acceleration > MIN_ACCELERATION) {
+      this.acceleration -= 1;
+    }
   };
+
+  this.fire = function() {
+    if (!that.bullet.isTriggered) {
+      this.bullet.x = this.player.x;
+      this.bullet.yPositionReset();
+      that.bullet.isTriggered = true;
+    }
+  }
 
   var checkCollision = function(player, obstacle) {
     var playerLeft = player.x;
@@ -119,5 +179,17 @@ function World() {
     }
 
     return false;
+  }
+
+  this.left = function() {
+    if (this.player.left() && !this.bullet.isTriggered) {
+      this.bullet.left();
+    }
+  }
+
+  this.right = function() {
+    if (this.player.right() && !this.bullet.isTriggered) {
+      this.bullet.right();
+    }
   }
 }

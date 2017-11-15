@@ -12,7 +12,7 @@ function Car() {
 
   var that = this;
 
-  this.init = function(props) { 
+  this.init = function(props) {
     this.x = props.x;
     this.y = props.y;
     this.dx = props.dx;
@@ -28,9 +28,10 @@ function Car() {
   };
 
   var setStyle = function() {
+    that.element.style.zIndex = 10;
+    that.element.style.position = "absolute";
     that.element.style.height = carHeight + "px";
     that.element.style.width = carWidth + "px";
-    that.element.style.position = "absolute";
 
     var carImage = document.createElement("img");
     carImage.src = "car.png";
@@ -54,16 +55,20 @@ function Car() {
   };
 
   this.left = function() {
-    if ((this.x - this.dx) >= trackLeft) {
+    if (!this.isCrashed && (this.x - this.dx) >= trackLeft) {
       this.x -= this.dx;
       setElementPosition();
+      return true;
     }
+    return false;
   };
 
   this.right = function() {
-    if ((this.x + this.dx) <= trackRight - this.width) {
+    if (!this.isCrashed && (this.x + this.dx) <= trackRight - this.width) {
       this.x += this.dx;
       setElementPosition();
+      return true;
     }
+    return false;
   };
 }

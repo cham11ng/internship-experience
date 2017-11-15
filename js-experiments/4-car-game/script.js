@@ -15,27 +15,33 @@ for (var i = 0; i < 1; i++) {
 
 document.onkeydown = function(event) {
   switch (event.keyCode) {
-    case 38:
+    case UP_KEY:
       for (key in worlds) {
         worlds[key].accelerate();
       }
       break;
 
-    case 40:
+    case DOWN_KEY:
       for (key in worlds) {
         worlds[key].deaccelerate();
       }
       break;
 
-    case 39:
+    case RIGHT_KEY:
       for (key in worlds) {
-        worlds[key].player.right();
+        worlds[key].right();
       }
       break;
 
-    case 37:
+    case LEFT_KEY:
       for (key in worlds) {
-        worlds[key].player.left()
+        worlds[key].left();
+      }
+      break;
+
+    case FIRE_KEY:
+      for (key in worlds) {
+        worlds[key].fire();
       }
       break;
 

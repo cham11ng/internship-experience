@@ -1,4 +1,4 @@
-function Obstacle() {
+function Bullet() {
   this.x = 0;
   this.y = 0;
   this.dx = 0;
@@ -8,20 +8,12 @@ function Obstacle() {
   this.areaWidth = 0;
   this.acceleration = 0;
   this.element = '';
-
-  var images = [
-    'cow.png',
-    'blue-car.png',
-    'red-car.png',
-    'rock.png'
-  ];
+  this.isTriggered = false;
 
   var that = this;
 
   this.init = function(props) {
-    var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
-    this.x = (containerWidth / 2 - carWidth / 2) + plusOrMinus * Math.floor(Math.random() * 2) * trackLane;
-    this.y = props.y;
+    this.x = props.x;
     this.dx = props.dx;
     this.height = props.height;
     this.width = props.width;
@@ -29,18 +21,24 @@ function Obstacle() {
     this.areaWidth = props.areaWidth;
     this.element = props.element;
     this.acceleration = props.acceleration;
+    this.yPositionReset(props);
 
     setStyle();
-    setElementPosition();
   };
 
+  this.yPositionReset = function() {
+    this.y = this.areaHeight - this.height;
+    setElementPosition();
+  }
+
   var setStyle = function() {
+    that.element.style.zIndex = 5;
     that.element.style.position = 'absolute';
 
     var obstacleImg = document.createElement('img');
     obstacleImg.style.height = carHeight + 'px';
     obstacleImg.style.width = carWidth + 'px';
-    obstacleImg.src = images[Math.floor(Math.random() * images.length)];
+    obstacleImg.src = 'bullet.png';
     that.element.appendChild(obstacleImg);
   }
 
@@ -50,7 +48,25 @@ function Obstacle() {
   };
 
   this.updatePosition = function(relativeVelocity) {
-    this.y += relativeVelocity + this.acceleration;
+    this.y -= relativeVelocity + this.acceleration;
     setElementPosition();
+  };
+
+  this.left = function() {
+    if ((this.x - this.dx) >= trackLeft) {
+      this.x -= this.dx;
+      setElementPosition();
+      return true;
+    }
+    return false;
+  };
+
+  this.right = function() {
+    if ((this.x + this.dx) <= trackRight - this.width) {
+      this.x += this.dx;
+      setElementPosition();
+      return true;
+    }
+    return false;
   };
 }
