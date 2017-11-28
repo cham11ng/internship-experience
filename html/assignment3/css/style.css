@@ -305,14 +305,6 @@
 	position: relative;
 }
 
-.content-wrapper .project-slider .slider-content li:first-child {
-	margin-left: 0%;
-}
-
-.content-wrapper .project-slider .slider-content li:last-child {
-	margin-right: 0%;
-}
-
 /******************Footer******************/
 .footer-wrapper h3 {
 	font-size: 1.25em;
