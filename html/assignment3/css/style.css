@@ -127,12 +127,17 @@
 	padding: 3.3125em 0em;
 }
 
-.content-wrapper .content-header h2 {
+.content-wrapper .content-header .title-slider li {
 	font-weight: bold;
 	font-size: 1.5625em;
 	margin-left: 11px;
 	float: left;
+	display: none;
 }
+
+.content-wrapper .content-header .title-slider li.active {
+	display: block;
+	}
 
 .content-wrapper .content-header i {
 	font-size: 1.25em;
@@ -148,6 +153,7 @@
 	top: 50%;
 	margin-top: -2.09375em;
 	position: absolute;
+	cursor: pointer;
 }
 
 .content-wrapper .main-slider .slide-control i {

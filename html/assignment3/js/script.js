@@ -20,7 +20,7 @@ var TOTAL_PROJECT_IN_ROW = 4;
 slideProject(projectSliderPosition);
 
 function slideProject(position) {
-  for (var i = 0, sliderLength = projectSlider.children.length; i < sliderLength; i+=TOTAL_PROJECT_IN_ROW) {
+  for (var i = 0, sliderLength = projectSlider.children.length; i < sliderLength; i += TOTAL_PROJECT_IN_ROW) {
     var opacity = 0;
     if (position === (i / TOTAL_PROJECT_IN_ROW + 1)) {
       opacityInterval = setInterval(fadeIn(i, opacity), FADE_DELTA_DURATION);
@@ -96,5 +96,64 @@ projectNext.onclick = function() {
   if (projectCanSlide && ((projectSliderPosition + 1) <= Math.ceil(projectSlider.children.length / TOTAL_PROJECT_IN_ROW))) {
     projectCanSlide = false;
     slideProject(++projectSliderPosition);
+  }
+}
+
+var mainSliderPosition = 1;
+var mainTitle = document.getElementById('mainTitle');
+var titleSliderNext = document.getElementById('titleSliderNext');
+var titleSliderPrevious = document.getElementById('titleSliderPrevious');
+var mainSliderArray = [
+  {
+    title: 'Donec faucibus ultricies congue',
+    images: ['a.png', 'b.png', 'c.png']
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet',
+    images: ['a.png', 'b.png', 'c.png']
+  },
+  {
+    title: 'Dignissimos id ipsa architecto labore',
+    images: ['a.png', 'b.png', 'c.png']
+  }
+];
+
+generateArray(mainSliderArray);
+
+function generateArray(givenArray) {
+  for (var i = 0, length = givenArray.length; i < length; i++) {
+    mainTitle.appendChild(createList(givenArray[i].title, i === 0));
+  }
+}
+
+function createList(value, hasClass) {
+  var list = document.createElement('li');
+  list.innerHTML = value;
+  if (hasClass === true) {
+    list.setAttribute('class', 'active');
+  }
+
+  return list;
+}
+
+function changeTitleSlider(position) {
+  for (var i = 0, length = mainTitle.children.length; i < length; i++) {
+    if (i + 1 === position) {
+      mainTitle.children[i].setAttribute('class', 'active');
+    } else {
+      mainTitle.children[i].removeAttribute('class');
+    }
+  }
+}
+
+titleSliderPrevious.onclick = function() {
+  if ((mainSliderPosition - 1) > 0) {
+    changeTitleSlider(--mainSliderPosition);
+  }
+}
+
+titleSliderNext.onclick = function() {
+  if ((mainSliderPosition + 1) <= mainSliderArray.length) {
+    changeTitleSlider(++mainSliderPosition);
   }
 }
