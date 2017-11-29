@@ -115,7 +115,7 @@ var mainSliderArray = [
   },
   {
     title: 'Dignissimos id ipsa architecto labore',
-    images: ['c.png', 'b.png', 'a.png']
+    images: ['c.png', 'b.png', 'a.png', 'c.png']
   }
 ];
 
@@ -129,6 +129,7 @@ function generateArray(givenArray) {
 }
 
 function generateSliders(givenObject, isActive, index) {
+  var imagePosition = 1;
   var images = [], pointers = [];
   var nav = document.createElement('ul');
   var list = document.createElement('ul');
@@ -152,11 +153,7 @@ function generateSliders(givenObject, isActive, index) {
   rightControl.appendChild(rightIcon);
   slideControl.appendChild(rightControl);
 
-  if (isActive === true) {
-    mainSlider.setAttribute('class', 'main-slider active');
-  } else {
-    mainSlider.setAttribute('class', 'main-slider');
-  }
+  mainSlider.setAttribute('class', isActive ? 'main-slider active' : 'main-slider');
 
   list.setAttribute('class', 'list');
   nav.setAttribute('class', 'nav');
@@ -176,19 +173,39 @@ function generateSliders(givenObject, isActive, index) {
 
   mainSlider.appendChild(sliderBody);
 
+  leftControl.onclick = function() {
+    if ((imagePosition - 1) > 0) {
+      changeImageSlider(--imagePosition, list, nav);
+    }
+  };
+
+  rightControl.onclick = function() {
+    if ((imagePosition + 1) <= list.children.length) {
+      changeImageSlider(++imagePosition, list, nav);
+    }
+  }
+
   return mainSlider;
+}
+
+function changeImageSlider(position, images, navs) {
+  for (var i = 0, length = images.children.length; i < length; i++) {
+    if (i + 1 === position) {
+      images.children[i].setAttribute('class', 'active');
+      navs.children[i].setAttribute('class', 'active');
+    } else {
+      images.children[i].removeAttribute('class');
+      navs.children[i].removeAttribute('class');
+    }
+  }
 }
 
 function createList(value, isActive, append) {
   var list = document.createElement('li');
-  if (isActive === true) {
+  if (isActive) {
     list.setAttribute('class', 'active');
   }
-  if (append === true) {
-    list.appendChild(value);
-  } else {
-    list.innerHTML = value;
-  }
+  (append) ? list.appendChild(value) : list.innerHTML = value;
 
   return list;
 }
