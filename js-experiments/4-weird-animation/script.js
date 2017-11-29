@@ -13,11 +13,6 @@ ball.init({
   radius: 1
 });
 
-setInterval(function() {
-  ball.move();
-}, 30);
-
-
 var ball = [];
 for (var i = 0; i < 15; i++) {
   ball[i] = [];
@@ -37,6 +32,7 @@ for (var i = 0; i < 15; i++) {
 }
 
 setInterval(function() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
   for (var i = 0; i < 15; i++) {
     for (var j = 0; j < 20; j++) {
       ball[i][j].move();

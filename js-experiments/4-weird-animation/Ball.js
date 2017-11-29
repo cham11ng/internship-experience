@@ -35,7 +35,6 @@ function Ball() {
   }
 
   this.move = function() {
-    /*this.ctx.clearRect(0, 0, canvas.width, canvas.height);*/
     newY += this.dy * this.yDirection;
     if ((newY - this.y) == this.distanceY || (newY - this.y) == 0) {
       this.yDirection *= -1;
