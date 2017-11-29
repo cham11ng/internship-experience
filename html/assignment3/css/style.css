@@ -153,6 +153,7 @@
 
 .content-wrapper .main-slider .slider-body {
 	position: relative;
+	overflow: hidden;
 }
 
 .content-wrapper .main-slider .slide-control {
@@ -194,11 +195,7 @@
 }
 
 .content-wrapper .main-slider ul.list li {
-	display: none;
-}
-
-.content-wrapper .main-slider ul.list li.active {
-	display: block;
+	display: inline-block;
 }
 
 .content-wrapper .main-slider ul.list li img {
