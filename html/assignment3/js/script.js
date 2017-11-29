@@ -99,7 +99,8 @@ projectNext.onclick = function() {
   }
 }
 
-var mainSliderPosition = 1;
+var titleSliderPosition = 1;
+var sliders = document.getElementById('sliders');
 var mainTitle = document.getElementById('mainTitle');
 var titleSliderNext = document.getElementById('titleSliderNext');
 var titleSliderPrevious = document.getElementById('titleSliderPrevious');
@@ -110,11 +111,11 @@ var mainSliderArray = [
   },
   {
     title: 'Lorem ipsum dolor sit amet',
-    images: ['a.png', 'b.png', 'c.png']
+    images: ['b.png', 'a.png']
   },
   {
     title: 'Dignissimos id ipsa architecto labore',
-    images: ['a.png', 'b.png', 'c.png']
+    images: ['c.png', 'b.png', 'a.png']
   }
 ];
 
@@ -122,15 +123,71 @@ generateArray(mainSliderArray);
 
 function generateArray(givenArray) {
   for (var i = 0, length = givenArray.length; i < length; i++) {
-    mainTitle.appendChild(createList(givenArray[i].title, i === 0));
+    mainTitle.appendChild(createList(givenArray[i].title, i === 0, false));
+    sliders.appendChild(generateSliders(givenArray[i], i === 0, i));
   }
 }
 
-function createList(value, hasClass) {
+function generateSliders(givenObject, isActive, index) {
+  var images = [], pointers = [];
+  var nav = document.createElement('ul');
+  var list = document.createElement('ul');
+  var leftIcon = document.createElement('i');
+  var rightIcon = document.createElement('i');
+  var mainSlider = document.createElement('div');
+  var sliderBody = document.createElement('div');
+  var leftControl = document.createElement('div');
+  var rightControl = document.createElement('div');
+  var slideControl = document.createElement('div');
+  
+  slideControl.setAttribute('class', 'slide-control clearfix');
+
+  leftIcon.setAttribute('class', 'icon-double-angle-left');
+  leftControl.setAttribute('class', 'left-control');
+  leftControl.appendChild(leftIcon);
+  slideControl.appendChild(leftControl);
+
+  rightIcon.setAttribute('class', 'icon-double-angle-right');
+  rightControl.setAttribute('class', 'right-control');
+  rightControl.appendChild(rightIcon);
+  slideControl.appendChild(rightControl);
+
+  if (isActive === true) {
+    mainSlider.setAttribute('class', 'main-slider active');
+  } else {
+    mainSlider.setAttribute('class', 'main-slider');
+  }
+
+  list.setAttribute('class', 'list');
+  nav.setAttribute('class', 'nav');
+  sliderBody.setAttribute('class', 'slider-body');
+
+  for (var i = 0, length = givenObject.images.length; i < length; i++) {
+    var img = document.createElement('img');
+    img.src = 'images/' + givenObject.images[i];
+    img.alt = 'Images';
+    list.appendChild(createList(img, i === 0, true));
+    nav.appendChild(createList(document.createElement('span'), i === 0, true));
+  }
+
+  sliderBody.appendChild(list);
+  sliderBody.appendChild(slideControl);
+  sliderBody.appendChild(nav);
+
+  mainSlider.appendChild(sliderBody);
+
+  return mainSlider;
+}
+
+function createList(value, isActive, append) {
   var list = document.createElement('li');
-  list.innerHTML = value;
-  if (hasClass === true) {
+  if (isActive === true) {
     list.setAttribute('class', 'active');
+  }
+  if (append === true) {
+    list.appendChild(value);
+  } else {
+    list.innerHTML = value;
   }
 
   return list;
@@ -140,20 +197,22 @@ function changeTitleSlider(position) {
   for (var i = 0, length = mainTitle.children.length; i < length; i++) {
     if (i + 1 === position) {
       mainTitle.children[i].setAttribute('class', 'active');
+      sliders.children[i].setAttribute('class', 'main-slider active');
     } else {
       mainTitle.children[i].removeAttribute('class');
+      sliders.children[i].setAttribute('class', 'main-slider');
     }
   }
 }
 
 titleSliderPrevious.onclick = function() {
-  if ((mainSliderPosition - 1) > 0) {
-    changeTitleSlider(--mainSliderPosition);
+  if ((titleSliderPosition - 1) > 0) {
+    changeTitleSlider(--titleSliderPosition);
   }
 }
 
 titleSliderNext.onclick = function() {
-  if ((mainSliderPosition + 1) <= mainSliderArray.length) {
-    changeTitleSlider(++mainSliderPosition);
+  if ((titleSliderPosition + 1) <= mainSliderArray.length) {
+    changeTitleSlider(++titleSliderPosition);
   }
 }
