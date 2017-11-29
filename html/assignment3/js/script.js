@@ -161,10 +161,19 @@ function generateSliders(givenObject, isActive, index) {
 
   for (var i = 0, length = givenObject.images.length; i < length; i++) {
     var img = document.createElement('img');
+    var navList = createList(document.createElement('span'), i === 0, true);
     img.src = 'images/' + givenObject.images[i];
     img.alt = 'Images';
     list.appendChild(createList(img, i === 0, true));
-    nav.appendChild(createList(document.createElement('span'), i === 0, true));
+    nav.appendChild(navList);
+    navList.onclick = navClick(i + 1);
+  }
+
+  function navClick(position) {
+    return function() {
+      imagePosition = position;
+      changeImageSlider(position, list, nav);
+    };
   }
 
   sliderBody.appendChild(list);
