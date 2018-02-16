@@ -61,14 +61,14 @@ heading.style.textAlign = "center";
 heading.style.color = "#037790";
 heading.style.fontFamily = "Verdana";
 heading.style.margin = ".25em";
-heading.style.letterSpacing = "-3px";
+heading.style.letterSpacing = "-1px";
 
-subHeading.innerHTML = "Software Engineer Intern";
+subHeading.innerHTML = "Associate Software Engineer";
 subHeading.style.textAlign = "center";
 subHeading.style.color = "#037790";
 subHeading.style.fontFamily = "Verdana";
 subHeading.style.margin = "0.25em";
-subHeading.style.letterSpacing = "-2px";
+subHeading.style.letterSpacing = "-1px";
 
 detail.innerHTML = "Personal Detail";
 detail.style.textAlign = "center";
@@ -76,10 +76,10 @@ detail.style.color = "#1ba4c2";
 detail.style.fontFamily = "Verdana";
 detail.style.textDecoration = "underline"
 detail.style.margin = ".25em";
-detail.style.letterSpacing = "-1px";
+detail.style.letterSpacing = "1px";
 
 var personalDetail = {
-  "Currently Working": "Leapfrog Technology Incorporation (Intern)",
+  "Currently Working": "Leapfrog Technology Nepal",
   "Education": "Bachelor in Engineering (Computer Engineering)",
   "Interests": [
     "Singing",
