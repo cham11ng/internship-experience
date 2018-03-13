@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+</head>
+<html>
+
+<body>
+    <div id="apple"></div>
+    <script>
+        function isIphone() {
+            const iDevices = ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'];
+
+            if (!!navigator.platform) {
+                const device = navigator.platform;
+
+                return device in iDevices;
+            }
+
+            return false;
+        }
+
+        var apple = document.getElementById('apple');
+
+        apple.innerHTML = isIphone() ? 'Iphone' : 'Linux';
+    </script>
+</body>
+</html>
