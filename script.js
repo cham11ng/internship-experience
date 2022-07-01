@@ -63,7 +63,7 @@ heading.style.fontFamily = "Verdana";
 heading.style.margin = ".25em";
 heading.style.letterSpacing = "-1px";
 
-subHeading.innerHTML = "Associate Software Engineer";
+subHeading.innerHTML = "Software Engineer";
 subHeading.style.textAlign = "center";
 subHeading.style.color = "#037790";
 subHeading.style.fontFamily = "Verdana";
