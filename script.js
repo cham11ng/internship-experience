@@ -89,9 +89,7 @@ var personalDetail = {
   "Completed Projects": [
     "Tutangle: Static and Responsive webpage design, photoshop, UI/UX, good design/bad design",
     "MODUSversus - Slicing and Responsive webpage design"
-  ],
-  "Email": "sgr.raee@gmail.com",
-  "Address": "Bhaktapur"
+  ]
 };
 
 for (var detail in personalDetail) {
